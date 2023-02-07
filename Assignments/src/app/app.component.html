@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+<app-child-to-parent  (sendData)="sendToParent($event)"></app-child-to-parent>
+
+<p> <b>Received data at Parent :<br>
+   Employee Id : {{display[0]}} <br>
+   Employee Name : {{display[1]}} <br>
+   Employee City : {{display[2]}}     
+  </b> </p>
