@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Country } from '../modules/country';
+import { StateClass } from '../modules/state';
 
 @Component({
   selector: 'app-country-state',
@@ -16,15 +17,20 @@ arrayOfCountry =["India","United States"]
 
 // Take state Array
 arrayOfStateIndia =[ "Andhra Pradesh", "Bihar","Chhattisgarh","Goa","Haryana","Maharashtra"]
-arrayOfStatesUS =["California","Georgia", "Indiana","New York","North Carolina"]
-  
+arrayOfStatesUS =["California","Georgia", "Indiana","New York","North Carolina","Georgia"]
+
+// taking Object 
+  // objIndia : StateClass[]
+
   constructor() { }
-  selectedCountry : any = '';
+  selectedCountry :string[] ;
+
+  // objarray :{ "hi",1,5}
   ngOnInit() {
   }
 
   // read from country dropdown   
-    onSelected(value:any): void {
+    onSelected(value:string): void {
       
       console.log(`value`,value);
 
@@ -37,7 +43,7 @@ arrayOfStatesUS =["California","Georgia", "Indiana","New York","North Carolina"]
         this.selectedCountry = this.arrayOfStatesUS;
       }
       else {
-        this.selectedCountry = "";
+        this.selectedCountry = [];
       }
       
     }

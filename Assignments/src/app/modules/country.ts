@@ -1,5 +1,4 @@
 export class Country {
-    country: string;
-    state1 :string;
-    state2 :string
+    country1 :string;
+    country2 :string
 }
