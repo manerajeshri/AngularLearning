@@ -1,0 +1,31 @@
+
+<h1>Country and State : using dropdown</h1>
+
+<!-- <ol>
+<li>Take Country Array and add two countries </li> .ts
+<li>Take state Array </li>.ts 
+<li>Bind Country to country dropdown</li> .html
+<li>Based on selected country from country dropdown state dropdown should only display that
+states </li>
+</ol>
+2 -->
+
+
+  <label > <b> Choose a Country</b>  </label>
+  <!-- <select onchange="GetSelectedTextValue(this)"> -->
+    <select #teams (change)="onSelected(teams.value)">
+        <option default>Pick a Country</option>
+    <option *ngFor="let country of arrayOfCountry"> {{country}} </option>
+  </select>
+  <br><br>
+
+  <label > <b>Choose a State</b>  </label>
+  <!-- <select [(ngModel)]="selectedTeam"> -->
+    <select>
+    <option *ngFor="let state of selectedCountry"> {{state}} </option>
+  </select>
+  <br><br> 
+
+
+
+
