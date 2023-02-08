@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ChildToParentComponent implements OnInit {
 @Input() display : string;
-@Output() sendData : EventEmitter<any>=new EventEmitter<any> ();
+@Output() sendData : EventEmitter<string | number>=new EventEmitter<string | number> ();
 
 // data to be send write here
  empData = {
