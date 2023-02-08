@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { NgForComponent } from './ng-for/ng-for.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    NgForComponent
   ],
   imports: [
     BrowserModule,
