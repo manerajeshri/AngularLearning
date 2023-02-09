@@ -11,7 +11,7 @@ states </li>
 2 -->
 
 
-  <label > <b> Choose a Country</b>  </label>
+  <label > <b>1] Choose a Country</b>  </label>
   <!-- <select onchange="GetSelectedTextValue(this)"> -->
     <select #teams (change)="onSelected(teams.value)">
         <option default>Pick a Country</option>
@@ -26,6 +26,19 @@ states </li>
   </select>
   <br><br> 
 
+  <label > <b> 2] Choose a Country using class</b>  </label>
+  
+    <select #teams1 (change)="onSelected1(teams1.value)">
+      <option default>Pick a Country</option>
+    <option *ngFor="let c of objCountryState.country"> {{c}} </option>
+  </select>
+  <br><br>
 
+  <label > <b>Choose a State using class</b>  </label>
+   <!-- <select [(ngModel)]="selectedTeam">  -->
+    <select>
+    <option *ngFor="let state of objCountryState[selectedCountry1] "> {{state}} </option>
+  </select>
+  <br><br> 
 
 

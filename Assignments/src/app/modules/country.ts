@@ -1,4 +1,6 @@
 export class Country {
-    country1 :string;
-    country2 :string
+    country :string[];
+    India :string[];
+    Australia :string[];
+    UnitedStates : string[];
 }
