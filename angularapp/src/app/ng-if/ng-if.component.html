@@ -1,0 +1,58 @@
+<h2>2]  *ngIf</h2>
+
+<!--  -->
+<p *ngIf="condition">  
+    condition is true and ngIf is true.  
+</p>  
+<p *ngIf="!condition">  
+    condition is false and ngIf is false.  
+</p>  
+
+<!--  -->
+<div>
+    <div *ngIf="condition; else elseBlock">  
+        Content to render when condition is true.  
+        </div>  
+        <ng-template #elseBlock>  
+            I am from  "ng-template #elseBlock"
+        Content to render when condition is false.  
+        </ng-template> 
+</div>
+<br> 
+
+
+    <!--  -->
+<div>
+    <button type="button" class="btn btn-primary" (click)="show = !show">{{show ? 'Hide' : 'Show'}}</button>  
+    <br>
+    show = {{show}}  
+    <br>  
+    <div *ngIf="show">Text to show</div>
+</div>
+    
+<!--  -->
+
+<div>
+    <div *ngIf="show; else elseBlock">Text to show</div>  
+    <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>  
+</div>
+
+<!-- abcd using ngIf -->
+
+<div class="container">
+    <div class="col-md-4">
+<select class="from-control" (change)="getProductValue($event.target.value)">
+<option value="Default"> select</option>
+<option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="E">E</option>
+
+</select>
+    </div>
+    <div class="col-md-12" *ngIf="selectedProduct">
+        <h2 class="text-sucess" > {{selectedProduct}} </h2>
+    </div>
+
+</div>
