@@ -6,17 +6,28 @@ import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
+import { FormsModule } from '@angular/forms';
+import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { NgStyleComponent } from './ng-style/ng-style.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
     DataBindingComponent,
-    NgForComponent
+    NgForComponent,
+    NgIfComponent,
+    NgSwitchComponent,
+    NgStyleComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
