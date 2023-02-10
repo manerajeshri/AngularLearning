@@ -1,0 +1,60 @@
+<h2>3]  *ngSwitch</h2>
+<div class="container">
+    <div class="col-md-4">
+<select class="from-control" (change)="getProductValue($event.target.value)">
+<option value="Default"> select</option>
+<option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="E">E</option>
+
+</select>
+    </div>
+    <div class="col-md-12" [ngSwitch]="selectedProduct">
+        <h2 class="text-sucess" *ngSwitchCase="'A'"> A</h2>
+        <h2 class="text-sucess" *ngSwitchCase="'B'"> B</h2>
+        <h2 class="text-sucess" *ngSwitchCase="'C'"> C</h2>
+        <h2 class="text-sucess" *ngSwitchCase="'D'"> D</h2>
+        <h2 class="text-sucess" *ngSwitchCase="'E'"> E</h2>
+
+    </div>
+
+</div>
+
+
+<!-- <div>
+    <div>
+        <div class="card" style="width: 18rem;" *ngFor="let course of courses">
+            <img class="card-img-top" [src]="course.iconURL" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{course.desc}}</h5>
+              <div [ngSwitch]="course.category">
+                    <div class="btn btn-info" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+                    <div class="btn btn-primary" *ngSwitchCase="'BEGINNER'">Beginner</div>
+                    <div class="btn btn-secondary" *ngSwitchCase="'ADVANCED'">Advanced</div>
+                    <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div> -->
+
+
+<!-- doing above code using ngContainer -->
+
+
+        <ng-container class="card" style="width: 18rem;" *ngFor="let course of courses">
+            <div *ngIf="course.id">
+            <img class="card-img-top" [src]="course.iconURL" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{course.desc}}</h5>
+              <div [ngSwitch]="course.category">
+                    <div class="btn btn-info" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+                    <div class="btn btn-primary" *ngSwitchCase="'BEGINNER'">Beginner</div>
+                    <div class="btn btn-secondary" *ngSwitchCase="'ADVANCED'">Advanced</div>
+                    <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
+              </div>
+            </div>
+        </div>
+        </ng-container>
