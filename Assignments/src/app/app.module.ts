@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { ChildToParentComponent } from './child-to-parent/child-to-parent.component';
 import { FormsModule } from '@angular/forms';
 import { CountryStateComponent } from './country-state/country-state.component';
+import { DirectiveProjectComponent } from './directive-project/directive-project.component';
+import { DirectiveComponent } from './directive/directive.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildToParentComponent,
-    CountryStateComponent
+    CountryStateComponent,
+    DirectiveProjectComponent,
+    DirectiveComponent
    
   ],
   imports: [
