@@ -1,0 +1,29 @@
+<!--  heading -->
+<h1>Angular 8 directives</h1>
+
+<p>Angular 8 directives can be classified in 4 categories</p>
+
+      <div class="form-floating">
+        <select class="form-select" id="floatingSelectGrid" (change)="onChange($event.target.value)">
+          <option default>  <b>Select Directive Type</b>  </option>
+
+          <!-- if we use array of object then -->
+          <option  *ngFor="let dir of directive.directives"> {{dir}} </option>
+          
+        </select>
+      </div>
+   <br> 
+   <div class="form-floating">
+    <select class="form-select" id="floatingSelectGrid" (change)="onChange1($event.target.value)">
+      <option default>  <b>Select Directive SubType</b>  </option>
+
+      <!-- if we use array of object then -->
+      <option  *ngFor="let sub of directive[selectedDirective]"> {{sub}} </option>
+      
+    </select>
+  </div>
+  <br>
+<br>
+
+
+      <p>hi</p>
