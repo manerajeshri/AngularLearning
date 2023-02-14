@@ -91,7 +91,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatRadioModule,
     MatCheckboxModule,
     MatStepperModule,
-    MatProgressBarModule 
+    MatProgressBarModule, 
     
   ],
   providers: [],
