@@ -1,0 +1,23 @@
+<p>templateform works!</p>
+<mat-card class="login-page">
+    <mat-card-title>
+        Login (Template Driven)
+    </mat-card-title>
+    <mat-card-content>
+        <form class="login-form" #loginForm="ngForm">
+            <mat-form-field>
+                <input matInput #email="ngModel" email [(ngModel)]="emails"  name="email" type="email" placeholder="Email" required>
+
+                <!-- <mat-error *ngIf="email.errors?.required">This email is manditory</mat-error> -->
+                <small *ngIf="!email.valid && email.touched"> This email is manditory </small>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput #password="ngModel" ngModel password name="password" type="password" placeholder="password" required>
+            </mat-form-field>
+            <button [disabled]="!loginForm.valid" mat-raised-button color="primary" (click)="login(loginForm)">Login</button>
+        </form>
+        <div class="form-val">
+            {{ loginForm.value | json}} 
+        </div>
+    </mat-card-content>
+</mat-card>
