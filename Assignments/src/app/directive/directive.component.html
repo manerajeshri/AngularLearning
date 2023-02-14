@@ -1,0 +1,76 @@
+
+<p class="h2">Assignment Directive</p>
+
+<!-- final code -->
+
+<div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card-header"><button type="button" class="btn btn-dark" (click)="onButtonClick()"> {{show ? 'Hide Details' : 'Display Details'}}</button></div>
+    <div class="card-body">
+      <h5 class="card-title" *ngIf="show">Paragraph</h5>
+      <p class="card-text" *ngIf="show">This is an example paragraph. Operates on Button. Toggle the display of that paragraph with the button</p>
+    </div>
+  </div>
+
+  <div class="card text-bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header"> <b>Button Click Count : {{countOfClick}}</b> </div>
+    <!-- <div class="card-body">
+      <h5 class="card-title">Date and Time : </h5>
+      <p class="card-text"> Date : {{displayDate}} <br> Time : {{displayTime}}  </p>
+    </div> -->
+  </div>
+  <div *ngFor=" let count of countArray"> 
+    <div [ngStyle]="{'background-color': count>=5 ? 'blue' : 'white'}">
+        <div [ngClass]="{'text-primary':count>=5 }">
+        Click Count : {{count}} Date : {{displayDate}}  Time : {{displayTime}}
+        <br>
+        </div>
+    </div>
+</div >
+<br><br>
+<!-- trial code below -->
+
+<!-- <ol> -->
+<!-- <li>Add A button which says 'Display Details'</li> -->
+<!-- <button type="button" class="btn btn-dark" (click)="onButtonClick()"> {{show ? 'Hide Details' : 'Display Details'}}</button> -->
+
+<!-- <li>Add a paragraph with any content of your choice (e.g. 'Secret Password = tuna')</li> -->
+<!-- <li>Toggle the displaying of that paragraph with the button created in the first step</li> -->
+<!-- <p *ngIf="show">This is an example paragraph. Operates on Button</p> -->
+
+<!-- <li>Log all button clicks in an array and output that array below the secret paragraph (maybe log a -->
+<!-- timestamp or simply an incrementing number)</li> -->
+
+<!-- <ng-container> </ng-container> -->
+<!-- <p> Button Click Count : {{countOfClick}} </p> <br> -->
+<!-- <p> Button Click Count from Array : {{count}} </p> -->
+
+<!-- <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white -->
+<!-- color (ngClass)</li> -->
+<!-- </ol> -->
+
+<!-- <div *ngIf="show; else elseBlock">Text to show</div>   -->
+<!-- <div *ngIf="count>5; else elseBlock"> -->
+<!-- <p *ngFor=" let count of countArray">Array of Click Count : {{count}} </p> -->
+<!-- </div> -->
+<!-- <ng-template #elseBlock >   -->
+    <!-- Content to render when condition is false.   -->
+
+<!-- <div *ngFor=" let count of countArray"> 
+    <div [ngStyle]="{'background-color': count>=5 ? 'blue' : 'white'}">
+        <div [ngClass]="{'text-primary':count>=5 }">
+        Array of Click Count : {{count}}
+        <br>
+        </div>
+    </div>
+</div > -->
+
+
+
+<!-- 
+    <div [ngStyle]="{'background-color': count>5 ? 'blue' : 'white'}">
+        <p *ngFor=" let count of countArray">Array of Click Count : {{count}} </p>
+    </div>
+     -->
+    <!-- </ng-template> -->
+
+    
