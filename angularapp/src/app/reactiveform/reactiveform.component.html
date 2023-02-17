@@ -1,0 +1,21 @@
+<p>reactiveform works!</p>
+
+<div class="container">
+    <div>
+        <div>
+            <form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+<div class="form-gropu">
+    <label for="username"> Username</label>
+    <input formControlName="username" type="text" class="form-control" id="username" placeholder="Enter Name">
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <!-- formControlName links to the ts form group name -->
+    <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter Email" >
+</div>
+<br>
+<button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
