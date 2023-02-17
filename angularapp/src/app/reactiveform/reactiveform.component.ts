@@ -21,7 +21,8 @@ export class ReactiveformComponent implements OnInit {
 createForm(){
   this.myReactiveForm= new FormGroup({
     'username' : new FormControl (null),
-    'email': new FormControl(null)
+    'email': new FormControl(null),
+    'course' :new FormControl("Angular") // can pass default value as Angular 
 
 })
 }
