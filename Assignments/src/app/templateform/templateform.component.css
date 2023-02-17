@@ -1,0 +1,17 @@
+.login-page{
+    max-width: 350px;
+    margin:50px auto 0 auto;
+    color: rgb(169, 106, 240);
+    background-color: rgb(227, 233, 235);
+}
+.login-form{
+    display:flex;
+    flex-direction: column;
+}
+.form-val{
+    margin-top: 10px;
+    color: brown;
+    background-color: antiquewhite;
+    max-width: 350px;
+    margin:50px auto 0 auto;
+}

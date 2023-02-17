@@ -1,0 +1,51 @@
+<h3>Template Driven Form</h3>
+
+<!-- simple Template Driven Form- with Two way data binding -->
+<mat-card class="login-page">
+    <mat-card-title>Registration Form</mat-card-title>
+    <mat-card-content>
+        <form class="login-form" #details="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput ngModel name="name" type="text" placeholder="Full Name" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Qualification</mat-label>
+                <input matInput ngModel name="qualification" type="text" placeholder="Qualification" required>
+            </mat-form-field>
+        <button mat-raised-button color="primary" (click)="submit(details)"> Submit</button>
+        </form>
+        
+    </mat-card-content>
+</mat-card>
+
+<!-- to display entered details -->
+<div class="form-val">
+    Entered details are : <br>{{details.value | json}}
+</div>
+
+
+<!-- Addition example with form validation -->
+<h3>Addition example with form validation </h3>
+<mat-card class="login-page">
+    <mat-card-title>Addition of two numbers</mat-card-title>
+    <mat-card-content>
+        <form class="login-form" #addition="ngForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Number 1</mat-label>
+                <input matInput ngModel name="num1" type="text" placeholder="num1" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Number 1</mat-label>
+                <input matInput ngModel name="num2" type="text" placeholder="num2" required>
+            </mat-form-field>
+        <button [disabled]="! addition.valid" mat-raised-button color="primary" (click)="Add(addition)"> Add</button>
+        </form>
+        <!-- to display entered details and addition -->
+<div class="form-val" *ngIf="addition.valid">
+    Addition : <br> 
+  <var> {{addition.value.num1}} </var> + <var> {{addition.value.num2}} </var> = {{sum}}
+    <br>
+</div>
+    </mat-card-content>
+</mat-card>
