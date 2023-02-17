@@ -8,16 +8,20 @@
     <div>
     <input matInput #email="ngModel" ngModel email email="emails"  name="email" type="email" 
     placeholder="Enter your email" required minlength="3" maxlength="50" 
-    pattern="[a-z0-9.]+@codemindtechnology.com">
+    pattern="[a-z0-9.]+@codemindtechnology.com"
+    (blur)="checkMail(email)">
 </div>
+
+<!-- with blur  -->
+<small *ngIf="isEmailValid" class="text-danger"> with blur :Not Valid  Email</small>
     <!-- err msg for parrten : for domain name -->
-    <mat-error *ngIf="email.errors?.pattern">Invalid Domain Entered </mat-error>
+    <!-- <mat-error *ngIf="email.errors?.pattern">Invalid Domain Entered </mat-error> -->
     <!-- err msg for required -->
-    <mat-error *ngIf="email.errors?.required">This email is manditory</mat-error>
+    <!-- <mat-error *ngIf="email.errors?.required">This email is manditory</mat-error> -->
     <!-- err msg for length -->
-    <mat-error *ngIf="email.errors?.minlength">your email must have minimum length 
-        {{email.errors?.minlength.requiredLength}} characters, 
-        but it has {{email.errors?.minlength.actualLength}} Characters</mat-error>
+    <!-- <mat-error *ngIf="email.errors?.minlength">your email must have minimum length  -->
+        <!-- {{email.errors?.minlength.requiredLength}} characters,  -->
+        <!-- but it has {{email.errors?.minlength.actualLength}} Characters</mat-error> -->
 
   </mat-form-field>
 </div>

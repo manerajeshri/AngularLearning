@@ -17,6 +17,8 @@ export class TempformDomainComponent implements OnInit {
 domain : string=""
 enableButton : boolean =true;
 errMessage = "";
+
+isEmailValid : boolean =false;
   constructor() { }
 
   ngOnInit() {
@@ -42,6 +44,26 @@ errMessage = "";
 // }
 
 // formdata.reset(); // to reset form
+  
+}
+
+//  writing with blur event for input
+checkMail(email){
+  console.log(email.value);
+  const domain = email.value.substring(email.value.lastIndexOf('@')+ 1); // @codemindtechnology.com
+
+  if(domain.toLowerCase() === "codemindtechnology.com"){
+  this.isEmailValid= false;
   }
+  else{
+    this.isEmailValid= true;
+  }
+}
+
+
+
+
+
+
 
 }

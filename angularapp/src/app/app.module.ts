@@ -44,6 +44,9 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+// reactive forms
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -58,6 +61,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     NgClassComponent,
     CustomDirective,
     TemplateformComponent,
+    ReactiveformComponent,
     
     
   ],
@@ -92,6 +96,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule, 
+    ReactiveFormsModule,
     
   ],
   providers: [],
