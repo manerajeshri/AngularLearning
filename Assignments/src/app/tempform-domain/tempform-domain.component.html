@@ -1,1 +1,28 @@
-<p>tempform-domain works!</p>
+<!-- Assignment Template Driven form : with domain validation -->
+
+<h3>Assignment Template Driven form :<br> with domain validation</h3>
+
+<form class="login-form" #loginForm="ngForm">
+<div class="example-container">
+  <mat-form-field>
+    <div>
+    <input matInput #email="ngModel" ngModel email email="emails"  name="email" type="email" 
+    placeholder="Enter your email" required minlength="3" maxlength="50" 
+    pattern="[a-z0-9.]+@codemindtechnology.com">
+</div>
+    <!-- err msg for parrten : for domain name -->
+    <mat-error *ngIf="email.errors?.pattern">Invalid Domain Entered </mat-error>
+    <!-- err msg for required -->
+    <mat-error *ngIf="email.errors?.required">This email is manditory</mat-error>
+    <!-- err msg for length -->
+    <mat-error *ngIf="email.errors?.minlength">your email must have minimum length 
+        {{email.errors?.minlength.requiredLength}} characters, 
+        but it has {{email.errors?.minlength.actualLength}} Characters</mat-error>
+
+  </mat-form-field>
+</div>
+<br>
+<button  mat-raised-button color="accent" (click)="onClickNext(loginForm)">Next</button>
+</form>
+<br>
+<!-- <p>Entered Email is : {{loginForm.email}}</p> -->
