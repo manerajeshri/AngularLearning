@@ -1,0 +1,115 @@
+
+<h4>Assignment Template Driven form : Registration form </h4>
+<br>
+
+<!-- creating form -->
+
+<mat-card class="login-page">
+<mat-card-title>Registration Form</mat-card-title>
+<mat-card-content>
+    <form class="login-form" #allFormDetails="ngForm">
+        <!-- for First Name [Required, Min 5 and max 5 char]  -->
+        <mat-form-field appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput #fName="ngModel"  ngModel name="fName" type="text" placeholder="First Name" 
+            required minlength="3" maxlength="20">
+          </mat-form-field>
+          <mat-error *ngIf="fName.errors?.required">  * First Name should be Entered</mat-error>
+          <mat-error *ngIf="fName.errors?.minlength"> First Name should be atleast {{fName.errors?.minlength.requiredLength}} characters long!
+            <!-- & atmax {{fName.errors?.maxLength.requiredLength}}characters long!  -->
+            <br> You entered {{fName.errors?.minlength.actualLength}} Characters</mat-error> 
+
+            <!-- for Last Name [Max 10 char] -->
+            <mat-form-field appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput ngModel name="lName" #lName="ngModel" type="text" placeholder="Last Name" maxlength="10">
+        </mat-form-field>
+
+            <!-- for Age [Required, B/W 17-20] -->
+        <mat-form-field appearance="fill">
+            <mat-label>Age </mat-label>
+            <input matInput ngModel name="age" #age="ngModel" type="number" placeholder="Enter your age"
+            required min="17" max="20">
+        </mat-form-field>
+        <mat-error *ngIf="age.errors?.required">* Please enter age Betweeen 17 - 20.</mat-error>
+
+    <!-- for Email [Required, Validate email] -->
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput ngModel name="email" #email="ngModel" type="email" placeholder="Enter Email" 
+        required pattern="[a-zA-Z0-9@.]+.com">
+    </mat-form-field>
+    <mat-error *ngIf="email.errors?.required">* Please enter Email.</mat-error> 
+    <mat-error *ngIf="email.errors?.pattern"> Please enter Valid Email</mat-error>
+        
+<!-- Phone [Max 10, Allow only numbers] -->
+<mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <span matPrefix>+91- &nbsp;</span>
+    <input matInput ngModel name="phone" #phone="ngModel" type="number" placeholder="Enter Phone Number as 123-45-678" 
+       pattern="[0-9]{10}">
+       <mat-icon matSuffix>mode_edit</mat-icon>
+</mat-form-field>
+<mat-error *ngIf="phone.errors?.pattern"> Please enter Valid Phone Number</mat-error>
+
+
+<!-- City (Dropdown) Options:['Mumbai','Kolkata','Delhi'] -->
+<mat-form-field appearance="fill">
+    <mat-label>Select your City</mat-label>
+    <select matNativeControl ngModel name="city">
+        <option label="Select your City"></option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Kolkata">Kolkata</option>
+        <option value="Delhi">Delhi</option>
+      </select>
+      <mat-hint>You can select your city here</mat-hint>
+</mat-form-field>
+<br>
+
+<!-- Gender [Required] -->
+<mat-label>Select Gender</mat-label>
+<mat-button-toggle-group ngModel name="gender" #gender="ngModel" aria-label="gender" required>
+  <mat-button-toggle value="Male">Male</mat-button-toggle>
+  <mat-button-toggle value="Female">Female</mat-button-toggle>
+</mat-button-toggle-group>
+<mat-error *ngIf="gender.errors?.required">* Please Select Gender.</mat-error> 
+<!-- <mat-chip-set>
+    <mat-chip-option color="accent" selected>Male</mat-chip-option>
+    <mat-chip-option color="warn">Female</mat-chip-option>
+</mat-chip-set> -->
+
+    <!-- Password [Required] -->
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput ngModel #password="ngModel" name="password" 
+          Required minlength="5" maxlength="8"
+          [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-error *ngIf="password.errors?.required">* Please Enter Password.</mat-error> 
+
+ <!-- Confirm Password [Required] -->    
+ <mat-form-field appearance="fill">
+    <mat-label>Confirm your password</mat-label>
+    <input matInput ngModel #cPassword="ngModel" name="cPassword" 
+    Required minlength="5" maxlength="8"
+    [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-error *ngIf="cPassword.errors?.required">* Please Confirm Password.</mat-error> 
+  <mat-error *ngIf="isPasswordMatch">{{msg}}</mat-error> 
+    </form>
+    <button type="submit" mat-raised-button color="primary" (click)="confirmPassword(allFormDetails)" >Submitt</button>
+</mat-card-content>
+
+</mat-card>
+
+<!-- To display form content -->
+<div>
+    Entered details are as follows : <br>
+    {{allFormDetails.value | json}}
+</div>
