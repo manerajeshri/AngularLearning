@@ -36,7 +36,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { TempformDomainComponent } from './tempform-domain/tempform-domain.component';
-
+import { TempltRegristrationFormComponent } from './templt-regristration-form/templt-regristration-form.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -49,6 +50,7 @@ import { TempformDomainComponent } from './tempform-domain/tempform-domain.compo
     DirectiveComponent,
     TemplateformComponent,
     TempformDomainComponent,
+    TempltRegristrationFormComponent,
     // adding from angular material
     
     
@@ -83,6 +85,7 @@ import { TempformDomainComponent } from './tempform-domain/tempform-domain.compo
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
+    MatChipsModule
 
 
     
