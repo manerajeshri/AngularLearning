@@ -38,6 +38,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { TempformDomainComponent } from './tempform-domain/tempform-domain.component';
 import { TempltRegristrationFormComponent } from './templt-regristration-form/templt-regristration-form.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { TempltRegFormComponent } from './templt-reg-form/templt-reg-form.component';
 
 
 
@@ -51,6 +52,7 @@ import {MatChipsModule} from '@angular/material/chips';
     TemplateformComponent,
     TempformDomainComponent,
     TempltRegristrationFormComponent,
+    TempltRegFormComponent,
     // adding from angular material
     
     

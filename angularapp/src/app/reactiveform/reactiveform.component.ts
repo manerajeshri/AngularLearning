@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactiveform',
@@ -20,14 +20,18 @@ export class ReactiveformComponent implements OnInit {
 // 2] write method and call in constructor
 createForm(){
   this.myReactiveForm= new FormGroup({
-    'username' : new FormControl (null),
-    'email': new FormControl(null),
+    'userDetails' : new FormGroup ({
+      'username' : new FormControl (null),
+    'email': new FormControl(null,[Validators.required,Validators.email]),
+    }),
+    
     'course' :new FormControl("Angular") // can pass default value as Angular 
 
 })
 }
-
+isSubmitted : boolean =false;
 onSubmit(){
+  this.isSubmitted=true;
   alert("Method called");
 
   console.log(`My ReactiveForm`,this.myReactiveForm);
