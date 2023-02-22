@@ -1,0 +1,34 @@
+<p>Counting the clicks</p>
+<!-- 1 string interpolation {{ }} -->
+<!-- 2 Properties binding [ ] -->
+<!-- 3 Event ( ) -->
+
+<!-- on button click -->
+<h1> Event Binding (HTML to  TS)- button</h1>
+<button (click)="onButtonClick()"> Click Me</button>
+<p>No of clicks : {{count}} </p>
+
+<h1> Event Binding (HTMLto TS)- text</h1>
+{{firstName}}<br>
+
+<!-- (keyup) is event -->
+<!--  "onKeyUp($event)" is method called in .ts when event happens 
+        ($event) will pass theobject or value entered in the text box to method-->
+<!-- ($event) passes all object as a value to method -->
+<!-- ($event.target.value) will pass only required value-->
+
+<!-- <input type="text" (keyup) = "onKeyUp($event)"> -->
+<input type ="text" (keyup) = "onKeyUp($event.target.value)"> 
+
+<h1> Two way data binding   </h1>
+
+<input type="text" [(ngModel)]="firstName2">
+
+{{firstName2}}
+
+<br>
+
+<!-- <input type="text" > -->
+
+
+ 
