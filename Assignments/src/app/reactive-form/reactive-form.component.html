@@ -48,14 +48,18 @@
     </form>
 </div>
 
-
+<!-- <mat-card class="demo-inline-calendar-card">
+    <mat-calendar [(selected)]="selected"></mat-calendar>
+  </mat-card>
+  <p>Selected date: {{selected}}</p> -->
+  
 
 
 <!-- Upon submitting the form, you should simply print the Value of the Form to the Console. 
 Optionally, display it in your template.  -->
 <!-- to display data -->
 
-<div>
+<div *ngIf="isSubmitted">
     <h2>Form Data</h2>
     <p>Email : {{reactiveForm.get('email').value}} </p>
     <p>Subscription : {{reactiveForm.get('subscription').value}} </p>

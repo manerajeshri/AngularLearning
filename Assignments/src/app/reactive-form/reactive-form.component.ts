@@ -40,14 +40,22 @@ export class ReactiveFormComponent implements OnInit {
 
   warningMessage="";
   disableErrMsg:boolean=true;
+  // for data display enable disbale control
+  isSubmitted : boolean = false;
   onClick(){
+    this.isSubmitted= true;
     console.log(`All form details`, this.reactiveForm);
     console.log(`All form Value`, this.reactiveForm.value);
-    // console.log(`Email`, this.reactiveForm.value.email);
-    // console.log(`Subscription`, this.reactiveForm.value.subscription);
-    // console.log(`Password`, this.reactiveForm.value.password);
-    // console.log(`Date`, this.reactiveForm.value.date);
 
+    // console.log(`new calender`,this.selected.toDateString());
+    
+    console.log(`Email : `, this.reactiveForm.value.email);
+    console.log(`Subscription :`, this.reactiveForm.value.subscription);
+    console.log(`Password :`, this.reactiveForm.value.password);
+    console.log(`Date :`, this.reactiveForm.value.date);
+
+
+    // for warning msg
     if ((this.reactiveForm.invalid== true) && (this.reactiveForm.touched==true)) {
       console.log(`form is Touched and its Invalid`);
       this.warningMessage = " *** Warning Message : This Field is Manditary";
@@ -55,6 +63,8 @@ export class ReactiveFormComponent implements OnInit {
     }
   }
 
+  // testing another calender type
+  // selected: Date | null;
   ngOnInit() {
   }
 
