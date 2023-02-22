@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildToParentComponent } from './child-to-parent/child-to-parent.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryStateComponent } from './country-state/country-state.component';
 import { DirectiveProjectComponent } from './directive-project/directive-project.component';
 import { DirectiveComponent } from './directive/directive.component';
@@ -91,7 +91,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     MatCheckboxModule,
     MatStepperModule,
     MatProgressBarModule,
-    MatChipsModule
+    MatChipsModule,
+    ReactiveFormsModule,
 
 
     
