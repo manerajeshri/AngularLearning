@@ -1,0 +1,45 @@
+<p>databinding works!</p>
+<div style="text-align:center">
+
+<!-- One way from Ts to html -->
+<h3> One way from Ts to html: String interpolation {{Variable }}</h3>
+<p> My name is {{firstName}}</p>
+
+<p>Emp details :  {{emp.id}}  and {{emp.course}} </p>
+
+<!--  displyaning array -->
+
+<p> {{arrNum}} {{arrNum [0]}} <br> {{arrayOfName}} </p>
+
+<!-- Acessing array of object element -->
+
+<p> {{arrayOfEmp[0].id}} {{arrayOfEmp[0].course}} </p>
+
+<!-- Displaying Complete object  -->
+<p *ngFor="let emp of arrayOfEmp"> 
+    {{ emp.name + " from "+  emp.city}}
+    </p>
+    <!-- {{arrayOfEmp[0]}} -->
+
+<!-- One way Ts to html Property binding -->
+<h3> One way Ts to html Property binding [ ] </h3>
+<img [src]="imgUrl" alt="No img found" width="150px" height="100px">
+
+<br> <br>
+<!-- One way data binding : HTML to Ts : Event binding -->
+<h3> One way data binding : HTML to Ts : Event binding ( ) </h3>
+
+<a href="https://www.w3schools.com/jsref/event_oninput.asp"> We will get events here</a>
+<h6>Using Button</h6>
+<button (click)="onClick()"> Click Me </button>  &nbsp; &nbsp; Button count =  {{count}} 
+<h6>Using textBox</h6>
+<input type="text" (keyup)="onKeyUp($event)"> <p> You Wrote : {{textByUser}}</p>
+
+
+<!-- <input type="text" (oninput)="myFunction($event)"> -->
+
+
+<h3> Two way DataBinding using [(ngModel)]</h3>
+<input type="text" [(ngModel)]="receivedFromHtml">
+<p>receivedFromHtml Displaying using Two way Data Binding [(ngModel)] : {{receivedFromHtml}}</p>
+</div>
