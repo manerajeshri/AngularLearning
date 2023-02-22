@@ -1,8 +1,20 @@
-.example-container mat-form-field + mat-form-field {
+/* .example-container mat-form-field + mat-form-field {
     margin-left: 8px;
   }
   
   .demo-inline-calendar-card {
     width: 300px;
-  }
+  } */
   
+
+  .example-card {
+    margin-left: 50px;
+    max-width: 400px;
+    color: black;
+    background-color: rgba(214, 243, 243, 0.466);
+  }
+
+  #small {
+   
+color: brown;
+  }
