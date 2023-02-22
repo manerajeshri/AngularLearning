@@ -5,9 +5,10 @@
 <h2>1]  *ngFor</h2>
 <h3> Displaying object</h3>
 <div> {{title}} </div>
-<table class="">
+<table class="table">
     <thead>
 <tr>
+    <th> Sr No.</th>
     <th>Title</th>
     <th>Director</th>
     <th>Cast</th>
@@ -15,7 +16,9 @@
 </tr>
     </thead>
     <tbody>
-<tr *ngFor="let movie of arrayOfMovies">
+<tr *ngFor="let movie of arrayOfMovies ; let varIndex= index ; 
+let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="oddItem">
+    <td> To show index = {{varIndex + 1}}</td>    
     <td> {{movie.title}} </td>
     <td>{{movie.director}} </td>
     <td>{{movie.cast}} </td>

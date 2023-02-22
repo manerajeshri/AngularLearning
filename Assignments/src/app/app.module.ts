@@ -39,6 +39,8 @@ import { TempformDomainComponent } from './tempform-domain/tempform-domain.compo
 import { TempltRegristrationFormComponent } from './templt-regristration-form/templt-regristration-form.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { TempltRegFormComponent } from './templt-reg-form/templt-reg-form.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 
 
@@ -53,6 +55,8 @@ import { TempltRegFormComponent } from './templt-reg-form/templt-reg-form.compon
     TempformDomainComponent,
     TempltRegristrationFormComponent,
     TempltRegFormComponent,
+    DataBindingComponent,
+    ReactiveFormComponent,
     // adding from angular material
     
     

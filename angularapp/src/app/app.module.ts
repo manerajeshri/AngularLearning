@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
-import { DataBindingComponent } from './data-binding/data-binding.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { FormsModule } from '@angular/forms';
@@ -47,13 +46,14 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 // reactive forms
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { NgIfSirComponent } from './ng-if-sir/ng-if-sir.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
-    DataBindingComponent,
     NgForComponent,
     NgIfComponent,
     NgSwitchComponent,
@@ -62,6 +62,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     CustomDirective,
     TemplateformComponent,
     ReactiveformComponent,
+    DatabindingComponent,
+    NgIfSirComponent,
     
     
   ],
