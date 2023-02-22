@@ -1,0 +1,17 @@
+<p>ngif works!</p>
+
+
+
+<div style="margin-left: 15px;" *ngIf="showme; else elseBlock ">
+    <!--                             -->
+    <div *ngFor="let p of post" >
+        <div> {{p.title}} </div>
+        <div> <img *ngIf="p.imageUrl; else noImage " width="200px" [src]="p.imageUrl" alt="This is tree Image"> </div>
+        <ng-template #noImage> ***** i am from else block=== Image not found</ng-template>
+        <div> {{p.content}} </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <p> Content not Available</p>
+</ng-template>
