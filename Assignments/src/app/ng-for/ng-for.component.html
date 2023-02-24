@@ -9,7 +9,7 @@
 <br>
 <!-- displaying object -->
 <p>object</p>
-<p *ngFor="let emp of emp"> {{emp.id}} {{emp.course}} </p>
+<p *ngFor="let emp of emp; index as i">Index is {{i}} {{emp.id}} {{emp.course}} </p>
 
 <!-- <p *ngFor="let friend of myFriends"> {{friend}}</p>
 <br>
