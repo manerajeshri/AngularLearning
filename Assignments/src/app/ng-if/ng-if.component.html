@@ -1,0 +1,32 @@
+<div style="text-align:center">
+
+<h4>structural Directive</h4>
+<h4>1] ng-if </h4>
+
+<!-- only if block -->
+<!-- <p *ngIf="condition"> My name is Raj </p> -->
+<!-- // is else block -->
+<div>
+    <!-- if block -->
+
+<p *ngIf= "disable; else notDisable"> if disable is true </p>
+
+<ng-template #notDisable> if disable is false</ng-template>
+
+    <div *ngIf="condition; else elseBlock">  
+        Content to render when condition is true.  
+        </div>  
+    <!-- else block -->
+        <ng-template #elseBlock>  
+            I am from  "ng-template #elseBlock" Content to render when condition is false.  
+        </ng-template> 
+</div>
+
+<p *ngIf="condition">  
+    condition is true and ngIf is true.  
+</p>  
+<p *ngIf="!condition">  
+    condition is false and ngIf is false.  
+</p> 
+
+</div>
