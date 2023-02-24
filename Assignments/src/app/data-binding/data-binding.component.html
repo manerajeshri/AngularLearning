@@ -23,7 +23,25 @@
 
 <!-- One way Ts to html Property binding -->
 <h3> One way Ts to html Property binding [ ] </h3>
-<img [src]="imgUrl" alt="No img found" width="150px" height="100px">
+<img [src]="imgUrl" alt="No img found" width="150px" height="100px"><br>
+<!-- One way Ts to html Property binding ==== Binding Audio -->
+<audio controls [src]="audUrl" alt="No audio found"></audio><br>
+<!-- One way Ts to html Property binding ==== Binding Video -->
+<!-- <video width="600px" height="300px" controls autoplay muted type="video/mp4" -->
+ <!-- [src]="vdoUrl" alt="No Video found"></video><br> -->
+
+ <h3>Learning Media Tags</h3>
+    <video width="300px" height="300px" controls autoplay muted [src]="vdoUrl">
+      <!-- <source src="video_running.mp4" type="video/mp4" /> -->
+      Please upgrade the browser as old version as not supported
+    </video>
+
+
+<!-- <iframe width="300px" height="300px" controls autoplay muted>
+    <source [src]="vdoUrl" alt="No video found" type="video/mp4" />
+    Please upgrade the browser as old version as not supported
+  </iframe> -->
+
 
 <br> <br>
 <!-- One way data binding : HTML to Ts : Event binding -->

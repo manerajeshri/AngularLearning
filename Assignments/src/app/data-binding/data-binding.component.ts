@@ -49,8 +49,12 @@ arrayOfEmp :any []=[
 imgUrl="https://imgd.aeplcdn.com/1280x720/n/cw/ec/102709/ntorq-125-right-front-three-quarter.jpeg?isig=0&q=80";
 
 // One way Ts to html Property binding ==== Binding Audio
+// audUrl="https://www.computerhope.com/jargon/m/example.mp3";
+audUrl='https://pagalworldl.com/files/download/id/16704'
 
  // One way Ts to html Property binding ==== Binding Video
+//  vdoUrl="https://www.youtube.com/watch?v=tlunj_2Wojo";
+// vdoUrl="E:\Angular\AngularLearning\Assignments\src\app\data-binding\video_running";
 
 
 // 3] One way data binding : HTML to Ts : Event binding
@@ -77,8 +81,11 @@ this.textByUser = receivedData.target.value
 
 // Two way data bonding
 receivedFromHtml : string= "Enter your data here"
-
-  constructor() { }
+mydata: string ='Enter data here'
+  constructor() {
+    
+    
+   }
 
   ngOnInit() {
   }

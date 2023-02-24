@@ -41,6 +41,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import { TempltRegFormComponent } from './templt-reg-form/templt-reg-form.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { NgIfComponent } from './ng-if/ng-if.component';
+import { NgForComponent } from './ng-for/ng-for.component';
 
 
 
@@ -57,6 +59,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     TempltRegFormComponent,
     DataBindingComponent,
     ReactiveFormComponent,
+    NgIfComponent,
+    NgForComponent,
     // adding from angular material
     
     
