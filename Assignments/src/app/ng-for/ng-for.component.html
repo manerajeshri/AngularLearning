@@ -1,0 +1,19 @@
+<div style="text-align:center">
+<h4>ng-for </h4>
+
+<div *ngIf="display; else elseBlock">
+<p *ngFor="let num of arrayOfNumbers "> {{num}}  </p>
+</div>
+<ng-template #elseBlock>array not available</ng-template>
+
+<br>
+<!-- displaying object -->
+<p>object</p>
+<p *ngFor="let emp of emp"> {{emp.id}} {{emp.course}} </p>
+
+<!-- <p *ngFor="let friend of myFriends"> {{friend}}</p>
+<br>
+
+<p *ngFor="let emp of arrayOfEmp"> the employee name:  {{emp.name}} city is: {{emp.city}} </p> -->
+
+</div>
