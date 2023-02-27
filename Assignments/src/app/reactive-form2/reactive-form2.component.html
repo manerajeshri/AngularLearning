@@ -1,0 +1,46 @@
+<h3 style="margin-left: 80px">     Assignment : Reactive Form</h3>
+<br>
+
+<div>
+    <mat-card class="example-card">
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="3">User Image</td>
+            <td>User Details</td>
+            <td>Account Details</td>
+        </tr>
+        <tr>
+            <td>Full Name</td>
+            <td>User Name</td>  
+        </tr>
+        <tr>
+            <td>Birthday</td>
+            <td>Email</td>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td>Gender</td>
+            <td>Password</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Bio</td>
+            <td>Country</td>
+            <td>Confirm Password</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Bio</td>
+            <td>I accept checkbox</td>
+        </tr>
+        <tr>
+            <td>Submit button</td>
+        </tr>
+    </tbody>
+</table>
+
+</form>
+</mat-card>
+
+</div>
