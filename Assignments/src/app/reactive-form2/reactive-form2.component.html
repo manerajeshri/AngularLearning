@@ -1,14 +1,14 @@
-<h3 style="margin-left: 80px">     Assignment : Reactive Form</h3>
+<h3 style="margin-left: 80px"> Assignment : Reactive Form</h3>
 <br>
 
 <div>
     <mat-card class="example-card">
-<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
 
-<table>
+            <!-- <table>
     <tbody>
         <tr>
-            <td rowspan="3">User Image</td>
+            <td rowspan="3"><img src="https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg" width="50px" height="50px" alt="Develper Img" ></td>
             <td>User Details</td>
             <td>Account Details</td>
         </tr>
@@ -38,9 +38,90 @@
             <td>Submit button</td>
         </tr>
     </tbody>
-</table>
+</table> -->
 
-</form>
-</mat-card>
 
+            <table>
+                <tr>
+                    <td>
+                        <div><img src="https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg"
+                                width="150px" height="150px" alt="Develper Img">
+                            <p>{{reactiveForm.get('userDetails.fullName').value}}</p> 
+                            <p>{{reactiveForm.get('userDetails.bio').value}}</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div formGroupName="userDetails">
+                            <h4>User Details</h4>
+                            <div class="form-group">
+                                <label for="fullName">Full Name*</label>
+                                <input formControlName="fullName" id="fullName" type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="yourBirthday">Your Birthday*</label>
+                                <input formControlName="yourBirthday" type="date" id="yourBirthday" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender">Gender*</label>
+                                <select formControlName="gender" id="gender" class="form-control">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group"> 
+                                <tr>
+                                    <td>
+                                        <label for="country">Country</label>
+                                <select formControlName="country" id="country" class="form-control">
+                                    <option>India</option>
+                                    <option>Japan</option>
+                                </select>
+                                    </td>
+                                    <td>
+                                        <label for="phone">Phone</label>
+                                        <input formControlName="phone" type="tel" id="phone" class="form-control">
+                                    </td>
+                                </tr>
+                            </div>
+                            <div class="form-group">
+                                <label>Bio</label><br>
+                                <textarea rows="4" cols="30" maxlength="256" 
+                                formControlName="bio" type="text" id="bio" class="form-control"></textarea><br>
+                                <small>Tell us about yourself</small>
+                            </div>
+
+                        </div>
+
+                    </td>
+                    <td>
+                        <div formGroupName="accountDetails">
+                            <h4>Account Details</h4>
+                            <!-- form group User Details -->
+                                <button type="submit" (click)="onClick()" >Submit</button>
+                                <div class="form-group">
+                                    <label></label>
+                                    <input>
+                                </div>
+                        </div>
+
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </form>
+    </mat-card>
+
+</div>
+
+<!-- for displaying data -->
+<div>
+    <label> Form Data :</label>
+    <p>
+
+
+    </p>
 </div>
