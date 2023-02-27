@@ -28,6 +28,25 @@
     </select>
 </div>
 
+<!-- <div class="form-group" FormArrayName="skills">
+    <label>Skills</label>
+<ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+    <input class="form-control" type="text"formControlName="{{i}}" placeholder="Add Skills">
+</ng-container>
+    <button class="btn btn-light btn-small mt-4 .btn-add" (click)="onAddSkills()"> + Add Skills</button>
+</div> -->
+
+<div class="formgroup" formArrayName="skills">
+    <label>Skills</label>
+    <ng-container *ngFor="let skill of myReactiveForm.get('skills').controls; index as i">
+        <input type="text" class="form-control" formControlName="{{i}}" placeholder="Add Skills">
+        
+    </ng-container>
+    
+    <button class="btn btn-light btn-small mt-4 btn-add" (click)="OnAddSkills()"><i>+</i>Add Skills</button>
+    
+</div>
+
 <br>
 <button type="submit" class="btn btn-primary" >Submit</button>
             </form>
@@ -41,7 +60,7 @@
       <p>Course: <strong>  {{ myReactiveForm.get('course').value}}</strong></p>
 
     </div>
-</div>
+</div> 
 
 
         </div>

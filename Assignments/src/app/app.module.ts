@@ -43,6 +43,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { ReactiveForm2Component } from './reactive-form2/reactive-form2.component';
 
 
 
@@ -61,6 +62,7 @@ import { NgForComponent } from './ng-for/ng-for.component';
     ReactiveFormComponent,
     NgIfComponent,
     NgForComponent,
+    ReactiveForm2Component,
     // adding from angular material
     
     
