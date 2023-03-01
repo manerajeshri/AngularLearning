@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-reactiveform',
@@ -10,10 +11,44 @@ export class ReactiveformComponent implements OnInit {
 
   // 1]create instace 
   myReactiveForm : FormGroup; // declaring form group collection of form control is formGroup
-  constructor() { 
+  constructor(private _fb: FormBuilder) { 
     //3] calling method by default
     this.createForm(); // called by default as constructor called by default
   }
+  // creating array
+  notAllowedNames=['Jack','Harry'];
+
+//   NaNames(control : FormControl){
+// if (this.notAllowedNames.indexOf(control.value)!==-1) {
+//   return {'namesNotAllowed':true}
+// } else {
+//   return null
+// }
+//   }
+  // sir
+  NaNames(control: FormControl) {
+    if(this.notAllowedNames.indexOf(control.value) !== -1) {
+      return {'namesNotAllowed': true}
+    } else {
+      return null;
+    }
+  }
+
+  NaEmails(control: FormControl):Promise <any>  | Observable <any>
+  {
+const myResponse = new Promise<any> ((resolve,reject)=>{
+  setTimeout(()=>{
+if (control.value == 'codemindtechnology@gmail.com') {
+  resolve({'emailNotAllowed': true})
+}else{
+  resolve(null)
+}
+  },5000)
+})
+return myResponse;
+  }
+
+
 
   ngOnInit() {
 // setTimeout(() => {
@@ -27,32 +62,43 @@ export class ReactiveformComponent implements OnInit {
     //   })
     // })
 
-setTimeout(() => {
-  this.myReactiveForm.patchValue({
-    'userDetails' : {
-             'username': 'Codemind123',
-            'email': 'codemind@gamil.com'
-           }
-  })
-}, 5000)
+// setTimeout(() => {
+//   this.myReactiveForm.patchValue({
+//     'userDetails' : {
+//              'username': 'Codemind123',
+//             'email': 'codemind@gamil.com'
+//            }
+//   })
+// }, 5000)
 
 
 
   }
 // 2] write method and call in constructor
 createForm(){
-  this.myReactiveForm= new FormGroup({
-    'userDetails' : new FormGroup ({
-      'username' : new FormControl (null),
-    'email': new FormControl(null,[Validators.required,Validators.email]),
-    }),
+//   this.myReactiveForm= new FormGroup({
+//     'userDetails' : new FormGroup ({
+//       'username' : new FormControl (null,[Validators.required,this.NaNames.bind(this)]),
+//     'email': new FormControl(null,[Validators.required,Validators.email,this.NaEmails]),
+//     }),
     
-    'course' :new FormControl("Angular"), // can pass default value as Angular 
-    'skills': new FormArray([
-      new FormControl(null,Validators.required)
-    ])
+//     'course' :new FormControl("Angular"), // can pass default value as Angular 
+//     'skills': new FormArray([
+//       new FormControl(null,Validators.required)
+//     ])
 
-})
+// })
+
+this.myReactiveForm = this._fb.group({
+  userDeatils: this._fb.group({
+    username: ['', [Validators.required, this.NaNames.bind(this) ]],
+    email: ['', [Validators.required, Validators.email], this.NaEmails]
+  }),
+  course: ['Angular'],
+  skills: this._fb.array([])
+ })
+
+
 }
 isSubmitted : boolean =false;
 onSubmit(){

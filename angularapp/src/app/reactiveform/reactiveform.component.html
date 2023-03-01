@@ -9,6 +9,27 @@
     <div class="form-group">
         <label for="username"> Username</label>
         <input formControlName="username" type="text" class="form-control" id="username" placeholder="Enter Name">
+        <small class="text-danger" *ngIf="!myReactiveForm.get('userDetails.username').valid &&
+                myReactiveForm.get('userDetails.username').touched">
+            <span class="text-danger" *ngIf="!myReactiveForm.get('userDetails.username').errors['required']">
+                User Name not valid</span>
+            <span class="text-danger" *ngIf="myReactiveForm.get('userDetails.username').errors['namesNotAllowed']">
+                {{myReactiveForm.get('userDetails.username').value}} Is Already Exist
+            </span>
+        </small>
+
+        <!-- <small class="text-danger" *ngIf="!myReactiveForm.get('userDeatils.username').valid && 
+        myReactiveForm.get('userDeatils.username').touched">
+            
+        <span *ngIf="myReactiveForm.get('userDeatils.username').errors['required']">
+            User name not valid
+        </span>
+        <span *ngIf="myReactiveForm.get('userDeatils.username').errors['namesNotAllowed']">
+            {{myReactiveForm.get('userDeatils.username').value}} is not allowed
+        </span>
+        </small> -->
+
+
     </div>
     <div class="form-group">
         <label for="email">Email</label>

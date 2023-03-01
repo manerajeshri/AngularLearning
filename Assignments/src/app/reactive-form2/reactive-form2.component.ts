@@ -9,6 +9,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ReactiveForm2Component implements OnInit {
 
   reactiveForm : FormGroup;
+
+//pattern for username
+unamePattern = "^[a-z0-9_-]{8,15}$";
+get username() {
+     return this.reactiveForm.get('username');
+} 
+
   createForm(){
     this.reactiveForm = new FormGroup({
       // User Details formgroup
@@ -18,21 +25,25 @@ export class ReactiveForm2Component implements OnInit {
         'gender': new FormControl(null,Validators.required),
         'country': new FormControl(null,Validators.required),
         'phone': new FormControl(null,[Validators.required]),
-        'bio': new FormControl(null),
+        'bio': new FormControl('Bio',Validators.maxLength(256)),
       }),
      
 
       // Account Details formgroup
 
-      'accountDetails': new FormGroup({
-        'username': new FormControl(null),
-        'email' : new FormControl(null,[Validators.required,Validators.email]),
-        'password' : new FormControl(null,Validators.required),
+        'accountDetails': new FormGroup({
+        'username': new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(25),
+          Validators.pattern("^[a-z0-9_-]{8,15}$")]),
+        'email' : new FormControl(null,[Validators.required,Validators.email,
+                                        Validators.pattern("^[a-z0-9._%+-]+@gmail.com")]),
+        'password' : new FormControl(null,[Validators.required,Validators.minLength(5),
+                                        Validators.pattern("^[a-z0-9A-Z]")]),
         'confirmPassword' : new FormControl(null,Validators.required),
       })
       
     })
   }
+
 
   onSubmit(){
   }
@@ -43,14 +54,19 @@ console.log(`All form Value`, this.reactiveForm.value);
 console.log(`All form Value`, this.reactiveForm.value.fullName);
 
   }
+// for phone
+onChange(){
 
+}
+ 
+  ngOnInit() {
+    const control = new FormControl('&', Validators.pattern('[0-9a-zA-Z ]*'));
+
+    console.log(control.errors); // {pattern: {requiredPattern: '^[a-zA-Z ]*$', actualValue: '1'}}
+
+  }
   constructor() { 
     this.createForm();
-  }
-
-  ngOnInit() {
-      
-
   }
 
 }

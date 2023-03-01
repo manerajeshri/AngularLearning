@@ -2,51 +2,13 @@
 <br>
 
 <div>
-    <mat-card class="example-card">
-        <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
-
-            <!-- <table>
-    <tbody>
-        <tr>
-            <td rowspan="3"><img src="https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg" width="50px" height="50px" alt="Develper Img" ></td>
-            <td>User Details</td>
-            <td>Account Details</td>
-        </tr>
-        <tr>
-            <td>Full Name</td>
-            <td>User Name</td>  
-        </tr>
-        <tr>
-            <td>Birthday</td>
-            <td>Email</td>
-        </tr>
-        <tr>
-            <td>User Name</td>
-            <td>Gender</td>
-            <td>Password</td>
-        </tr>
-        <tr>
-            <td rowspan="3">Bio</td>
-            <td>Country</td>
-            <td>Confirm Password</td>
-        </tr>
-        <tr>
-            <td rowspan="2">Bio</td>
-            <td>I accept checkbox</td>
-        </tr>
-        <tr>
-            <td>Submit button</td>
-        </tr>
-    </tbody>
-</table> -->
-
-
+            <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
             <table>
                 <tr>
                     <td>
                         <div><img src="https://envri.eu/wp-content/uploads/2016/08/software-developer-copy.jpg"
                                 width="150px" height="150px" alt="Develper Img">
-                            <p>{{reactiveForm.get('userDetails.fullName').value}}</p> 
+                            <p>{{reactiveForm.get('userDetails.fullName').value}}</p>
                             <p>{{reactiveForm.get('userDetails.bio').value}}</p>
                         </div>
                     </td>
@@ -56,11 +18,21 @@
                             <div class="form-group">
                                 <label for="fullName">Full Name*</label>
                                 <input formControlName="fullName" id="fullName" type="text" class="form-control">
+                                <mat-error
+                                    *ngIf="!reactiveForm.get('userDetails.fullName').valid && reactiveForm.get('userDetails.fullName').touched">
+                                    Please Enter Full Name
+
+                                </mat-error>
                             </div>
 
                             <div class="form-group">
                                 <label for="yourBirthday">Your Birthday*</label>
-                                <input formControlName="yourBirthday" type="date" id="yourBirthday" class="form-control">
+                                <input formControlName="yourBirthday" type="date" id="yourBirthday"
+                                    class="form-control">
+                                <!-- <small *ngIf="!reactiveFrom.get('userDetails.yourBirthday').valid">Enter DOB</small>  -->
+                                <mat-error
+                                    *ngIf="!reactiveForm.get('userDetails.yourBirthday').valid && reactiveForm.get('userDetails.yourBirthday').touched"><b></b>Please
+                                    Enter Your Birth date</mat-error>
                             </div>
 
                             <div class="form-group">
@@ -69,59 +41,97 @@
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
-                            </div>
-                            <div class="form-group"> 
-                                <tr>
-                                    <td>
-                                        <label for="country">Country</label>
-                                <select formControlName="country" id="country" class="form-control">
-                                    <option>India</option>
-                                    <option>Japan</option>
-                                </select>
-                                    </td>
-                                    <td>
-                                        <label for="phone">Phone</label>
-                                        <input formControlName="phone" type="tel" id="phone" class="form-control">
-                                    </td>
-                                </tr>
+                                <!-- <mat-error *ngIf="!reactiveFrom.get('userDetails.gender').valid"> Select Gender </mat-error> -->
+                                <mat-error
+                                    *ngIf="!reactiveForm.get('userDetails.gender').valid && reactiveForm.get('userDetails.gender').touched"><b></b>Select
+                                    Gender</mat-error>
                             </div>
                             <div class="form-group">
-                                <label>Bio</label><br>
-                                <textarea rows="4" cols="30" maxlength="256" 
-                                formControlName="bio" type="text" id="bio" class="form-control"></textarea><br>
-                                <small>Tell us about yourself</small>
-                            </div>
-
-                        </div>
-
+                <tr>
+                    <td>
+                        <label for="country">Country</label>
+                        <select formControlName="country" id="country" class="form-control">
+                            <option>India</option>
+                            <option>Japan</option>
+                        </select>
+                        <!-- <mat-error *ngIf="!reactiveFrom.get('userDetails.country').valid">country is Required</mat-error> -->
+                        <mat-error
+                            *ngIf="!reactiveForm.get('userDetails.country').valid && reactiveForm.get('userDetails.country').touched"><b></b>Select
+                            Country</mat-error>
                     </td>
                     <td>
-                        <div formGroupName="accountDetails">
-                            <h4>Account Details</h4>
-                            <!-- form group User Details -->
-                                <button type="submit" (click)="onClick()" >Submit</button>
-                                <div class="form-group">
-                                    <label></label>
-                                    <input>
-                                </div>
-                        </div>
-
+                        <label for="phone">Phone</label>
+                        <input formControlName="phone" type="tel" id="phone" class="form-control" (change)="onChange()">
+                        <mat-error
+                            *ngIf="!reactiveForm.get('userDetails.phone').valid && reactiveForm.get('userDetails.phone').touched"><b></b>Enter
+                            Phone Number</mat-error>
                     </td>
                 </tr>
 
-            </table>
-
-
-        </form>
-    </mat-card>
+</div>
+<div class="form-group">
+    <label>Bio</label><br>
+    <textarea rows="4" cols="30" formControlName="bio" type="text" id="bio" class="form-control"></textarea><br>
+    <mat-hint style="text-align: left;">Tell us about
+        yourself</mat-hint>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <mat-hint style="text-align: end;">{{reactiveForm.get('userDetails.bio').value.length }}/256</mat-hint>
+    <!-- <mat-error *ngIf="reactiveForm.get('userDetails.bio').errors?">Exceding Text limit</mat-error> -->
+</div>
 
 </div>
 
-<!-- for displaying data -->
-<div>
-    <label> Form Data :</label>
-    <p>
+</td>
+<td>
+    <div formGroupName="accountDetails">
+        <h4>Account Details</h4>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input formControlName="username" id="username" class="form-control" >
+        </div>
+
+        <!-- <div *ngIf="accountDetails.username.errors?.pattern">
+            User name not valid.
+       </div> -->
 
 
-    </p>
+        <small class="text-danger" *ngIf="!reactiveForm.get('accountDetails.username').valid &&
+        reactiveForm.get('accountDetails.username').touched">
+    <span class="text-danger" *ngIf="reactiveForm.get('accountDetails.username').errors['required']">
+        Username must be atleast 5 characters long <br>Your username must contain only numbers and letters </span>
+    <span class="text-danger" *ngIf="reactiveForm.get('accountDetails.username').errors['pattern']">
+        {{reactiveForm.get('accountDetails.username').value}} Pattern Does not match
+    </span>
+</small>
+<br>
+<label>Enter your email</label><br>
+              <input formControlName="email" type="email" class="form-control" id="email" placeholder="xyz@gmail.com" >
+            <mat-error *ngIf="!reactiveForm.get('accountDetails.email').valid && reactiveForm.get('accountDetails.email').touched ">Please Enter Email</mat-error>
+
+
+<br>
+<label for="password">Password</label>
+<input formControlName="password" id="password" type="password" class="form-control">
+
+              <mat-error *ngIf="!reactiveForm.get('accountDetails.password').valid && reactiveForm.get('accountDetails.password').touched ">
+                Please Enter Password <br>Password must be at least 5 characters long <br> Your password must contain at least one uppercase, one lowercase and one number</mat-error>
+              
+<br>
+
+<label for="confirmPassword">Confirm Password</label>
+<br>
+<input formControlName="confirmPassword" id="confirmPassword" type="password" class="form-control">
+
+              <mat-error *ngIf="!reactiveForm.get('accountDetails.confirmPassword').valid && reactiveForm.get('accountDetails.confirmPassword').touched "><b></b>Please Confirm Password</mat-error>
+              
+<br>
+
+<input type="checkbox" id="checkbox"><label for="checkbox">&nbsp;&nbsp;I accept terms and condition</label>
+<br>
+        <button type="submit" (click)="onClick()">Submit</button>
+    </div>
+</td>
+</tr>
+</table>
+</form>
 </div>
+
