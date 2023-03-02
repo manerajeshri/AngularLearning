@@ -90,7 +90,7 @@ createForm(){
 // })
 
 this.myReactiveForm = this._fb.group({
-  userDeatils: this._fb.group({
+  userDetails: this._fb.group({
     username: ['', [Validators.required, this.NaNames.bind(this) ]],
     email: ['', [Validators.required, Validators.email], this.NaEmails]
   }),
