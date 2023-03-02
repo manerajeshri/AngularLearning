@@ -45,6 +45,7 @@ import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
 import { ReactiveForm2Component } from './reactive-form2/reactive-form2.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
+import { ScratchComponent } from './scratch/scratch.component';
 
 
 
@@ -65,6 +66,7 @@ import { NgSwitchComponent } from './ng-switch/ng-switch.component';
     NgForComponent,
     ReactiveForm2Component,
     NgSwitchComponent,
+    ScratchComponent,
     // adding from angular material
     
     

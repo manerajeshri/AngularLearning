@@ -1,1 +1,53 @@
-<p>ng-switch works!</p>
+<div style="text-align:center">
+
+    <h4>structural Directive</h4>
+    <h4> ng-Switch </h4>
+
+<br>
+<h4>Example 1</h4>
+    <div [ngSwitch]="num">
+        <div *ngSwitchCase="1">ONE</div>
+        <div *ngSwitchCase="2">TWO</div>
+        <div *ngSwitchCase="3">THREE</div>
+        <div *ngSwitchDefault>Invalid</div>
+        </div>
+<br>
+<h4>Example 2</h4>
+    <div [ngSwitch]="color">
+        <div *ngSwitchCase ="'red'" > You Selected Red</div>
+        <div *ngSwitchCase ="'yellow'" > You Selected Yellow</div>
+        <div *ngSwitchCase ="'blue'" > You Selected Blue</div>
+        <div *ngSwitchDefault>Pick color Again</div>
+
+    </div>
+
+    <h4>Example 3</h4>
+    <h5>Give input from html display information using ngSwitch</h5>
+
+    <input type="text" [(ngModel)]="receivedName" placeholder="Enter your name here to get Full Name">
+    <div [ngSwitch]="receivedName">
+        <div *ngSwitchCase="'Raj'">Full Name : Rajeshri Mane</div>
+        <div *ngSwitchCase="'Aaradhya'">Full Name : Aaradhya Amol Deshmukh</div>
+        <div *ngSwitchCase="'Amol'">Full Name : Amol</div>
+        <div *ngSwitchDefault>Invalid Name</div>
+        </div>
+
+    </div>
+
+    <h4>Example 4 By sir</h4>
+    <div>
+        <div>
+            <div class="card" style="width: 18rem;" *ngFor="let course of courses">
+                <img class="card-img-top" [src]="course.iconURL" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{course.desc}}</h5>
+                  <div [ngSwitch]="course.category">
+                        <div class="btn btn-info" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+                        <div class="btn btn-primary" *ngSwitchCase="'BEGINNER'">Beginner</div>
+                        <div class="btn btn-secondary" *ngSwitchCase="'ADVANCED'">Advanced</div>
+                        <div class="btn btn-secondary" *ngSwitchDefault>All level</div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>

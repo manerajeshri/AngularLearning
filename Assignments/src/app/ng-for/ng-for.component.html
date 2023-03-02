@@ -7,13 +7,17 @@
 <ng-template #elseBlock>array not available</ng-template>
 
 <br>
-<!-- displaying object -->
-<p>object</p>
+<!-- displaying single object -->
+<p>object</p> 
 <p *ngFor="let emp of emp; index as i">Index is {{i}} {{emp.id}} {{emp.course}} </p>
 
-<!-- <p *ngFor="let friend of myFriends"> {{friend}}</p>
+
+<!-- Displaying single Array  -->
+
+<p *ngFor="let friend of myFriends"> {{friend}}</p>
 <br>
 
-<p *ngFor="let emp of arrayOfEmp"> the employee name:  {{emp.name}} city is: {{emp.city}} </p> -->
+<!-- Displaying array of objects -->
+<p *ngFor="let emp of arrayOfEmp"> the employee name:  {{emp.name}} city is: {{emp.city}} </p>
 
 </div>
