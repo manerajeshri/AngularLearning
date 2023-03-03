@@ -1,0 +1,31 @@
+<p>pipeexample works!</p>
+<div>
+    <p>Todays Date : {{todaysDate | date : 'shortDate'}} </p>
+    <p>Todays Date : {{todaysDate | date : 'fulldate'}}</p>
+    <p>Todays Date : {{todaysDate | date : 'mm/dd/yyyy'}}</p>
+    <p>Todays Date : {{todaysDate | date : 'h:mm'}}</p>
+    <p>Todays Date : {{todaysDate | date : 'fulldate' | uppercase}} </p>
+</div>
+
+
+<!-- price -->
+<hr>
+<div>
+    <p>price : {{price}}</p>
+    <p>price : {{price | currency: 'INR' }}</p>
+    <p>price : {{price | currency: 'USD' }}</p>
+    <p>price : {{price | currency: 'EUR' }}</p>
+</div>
+<hr>
+
+
+<div>
+    <p>Json Pipe used to show string object </p>
+    <p> {{employee | json}} </p>
+
+</div>
+
+<div>
+    <p>Custom Pipe Example</p>
+    <!-- <p> {{countLength | custom}} </p> -->
+</div>
