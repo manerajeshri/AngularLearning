@@ -37,8 +37,68 @@
   <!-- <app-templateform></app-templateform> -->
 
   <!-- <h3>Reactive Form</h3> -->
-  <app-reactiveform></app-reactiveform>
+  <!-- <app-reactiveform></app-reactiveform> -->
 
   <!-- Data binding -->
   <!-- <app-databinding></app-databinding> -->
+
+
+  <!-- HttpClient displaying data from services using -->
+  <!-- <ng-container *ngFor="let product of products">
+    Product Name : <Strong class="text-sucess"> {{product.name}} </Strong>
+    Product Id : <Strong class="text-sucess"> {{product.id}} </Strong><br>
+  </ng-container> -->
+
+
+<!-- <br> <hr> <br> -->
+
+<!-- <ng-container *ngFor="let user of users" >
+  User Id : <p>{{user.id}}  </p>
+  User Name : <p>{{user.name}}  </p>
+</ng-container> -->
+<div>
+<h4 style="text-align: center;"> Assignment : HttpClient</h4>
+<br>
+<div class="col-md-">
+  <label for="search">Search By Username</label>
+  <input type="text" class="form-control" placeholder="Enter Username"
+  [(ngModel)]="searchId">
+</div>
+<p> {{searchId}} </p>
+
+<table class="table">
+  <thead>
+<tr style="background-color: rgba(246, 242, 242, 0.975);">
+  <th> ID</th>
+  <th>Name</th>
+  <th>Username</th>
+  <th>Company</th>
+  <th>Email</th>
+  <th>Phone</th>
+  <th>Address</th>
+</tr>
+  </thead>
+  <tbody>
+    {{searchId}}
+<tr *ngFor="let user of users |search:searchId ; let varIndex= index ; 
+let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="oddItem">
+  <td> {{user.id}} </td>
+  <td>{{user.name}} </td>
+  <td>{{user.username}} </td>
+  <td> {{user.company.name}} </td>
+  <td>{{user.email}} </td>
+  <td> {{user.phone}} </td>
+  <td> {{user.address.street}} , {{user.address.city}}, {{user.address.zipcode}} </td>
+</tr>
+  </tbody>
+</table> 
+</div>
+<!-- </ng-container> -->
+
+
+<!-- <br> <hr> <br> -->
+<!-- Pipe | example -->
+  <!-- <app-pipeexample></app-pipeexample> -->
+<!-- Pipe | Product filter example -->
+  <!-- <app-product-filter></app-product-filter> -->
   

@@ -48,6 +48,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { NgIfSirComponent } from './ng-if-sir/ng-if-sir.component';
+import { PipeexampleComponent } from './pipeexample/pipeexample.component';
+import { CustomPipePipe } from './custom-pipe.pipe';
+import { SearchPipe } from './search.pipe';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -64,6 +69,10 @@ import { NgIfSirComponent } from './ng-if-sir/ng-if-sir.component';
     ReactiveformComponent,
     DatabindingComponent,
     NgIfSirComponent,
+    PipeexampleComponent,
+    CustomPipePipe,
+    SearchPipe,
+    ProductFilterComponent,
     
     
   ],
@@ -99,6 +108,7 @@ import { NgIfSirComponent } from './ng-if-sir/ng-if-sir.component';
     MatStepperModule,
     MatProgressBarModule, 
     ReactiveFormsModule,
+    HttpClientModule
     
   ],
   providers: [],
