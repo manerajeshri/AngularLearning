@@ -1,0 +1,27 @@
+<h5 style="text-align: center;">Reactive form Using FormBuilder</h5>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()"> 
+    <div formGroupName="userDetails">
+    <div>
+        <label><b>Enter username</b></label><br>
+                  <input formControlName="username" type="text" class="form-control" id="username">
+                  <p>Entered Usename : {{myForm.get('userDetails.username').value}} </p>
+    </div>
+    
+<div>
+    <label><b>Enter your email</b></label><br>
+              <input formControlName="email" type="email" class="form-control" id="email" placeholder="xyz@example.com" >
+                <p>Entered Email : {{myForm.get('userDetails.email').value}} </p>
+            </div>
+</div>
+
+<div>
+    <label for="course"><b>Select Course</b> </label><br>
+    <select formControlName="course" id="course" class="form-control">
+        <option *ngFor="let course of course"> {{course}}   </option>
+    </select> 
+    <p>Selected Course : {{myForm.get('course').value}}  </p>
+</div>
+</form>
+
+
