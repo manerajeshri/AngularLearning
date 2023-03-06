@@ -42,8 +42,10 @@
   <!-- Data binding -->
   <!-- <app-databinding></app-databinding> -->
 
+<!-- <br> <hr> <br> -->
 
   <!-- HttpClient displaying data from services using -->
+
   <!-- <ng-container *ngFor="let product of products">
     Product Name : <Strong class="text-sucess"> {{product.name}} </Strong>
     Product Id : <Strong class="text-sucess"> {{product.id}} </Strong><br>
@@ -52,19 +54,14 @@
 
 <!-- <br> <hr> <br> -->
 
-<!-- <ng-container *ngFor="let user of users" >
-  User Id : <p>{{user.id}}  </p>
-  User Name : <p>{{user.name}}  </p>
-</ng-container> -->
-<div>
-<h4 style="text-align: center;"> Assignment : HttpClient</h4>
+<!-- <div>
+<h4 style="text-align: center;"> Assignment : HttpClient and Pipe</h4>
 <br>
 <div class="col-md-">
-  <label for="search">Search By Username</label>
-  <input type="text" class="form-control" placeholder="Enter Username"
-  [(ngModel)]="searchId">
+  <label for="searchName">Search By Name</label>
+  <input type="text" class="form-control" placeholder="Enter name"
+  [(ngModel)]="searchByName">
 </div>
-<p> {{searchId}} </p>
 
 <table class="table">
   <thead>
@@ -79,8 +76,8 @@
 </tr>
   </thead>
   <tbody>
-    {{searchId}}
-<tr *ngFor="let user of users |search:searchId ; let varIndex= index ; 
+    
+<tr *ngFor="let user of users|searchName:searchByName; let varIndex= index ; 
 let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="oddItem">
   <td> {{user.id}} </td>
   <td>{{user.name}} </td>
@@ -92,13 +89,25 @@ let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="od
 </tr>
   </tbody>
 </table> 
-</div>
-<!-- </ng-container> -->
-
+</div> -->
 
 <!-- <br> <hr> <br> -->
-<!-- Pipe | example -->
+
+<!-- Pipe | example 1]-->
   <!-- <app-pipeexample></app-pipeexample> -->
 <!-- Pipe | Product filter example -->
   <!-- <app-product-filter></app-product-filter> -->
   
+
+  <!-- communication between component -->
+<div class="row">
+  <div class="">
+    <div>
+      <app-comp1></app-comp1>
+    </div>
+  </div>
+</div>
+  
+  <app-comp2></app-comp2>
+  <app-comp3></app-comp3>
+  <app-comp4></app-comp4>

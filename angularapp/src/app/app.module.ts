@@ -53,6 +53,11 @@ import { CustomPipePipe } from './custom-pipe.pipe';
 import { SearchPipe } from './search.pipe';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchNamePipe } from './search-name.pipe';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { Comp4Component } from './comp4/comp4.component';
 
 
 @NgModule({
@@ -73,6 +78,11 @@ import { HttpClientModule } from '@angular/common/http';
     CustomPipePipe,
     SearchPipe,
     ProductFilterComponent,
+    SearchNamePipe,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    Comp4Component,
     
     
   ],

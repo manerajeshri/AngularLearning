@@ -8,7 +8,7 @@ import { MyserviceService } from './services/myservice.service';
   styleUrls: ['./app.component.css']
 })
 
-// add implements OnInit
+// 3] add implements OnInit
 export class AppComponent implements OnInit {
   title = 'angularapp';
 
@@ -16,9 +16,11 @@ export class AppComponent implements OnInit {
   // creating empty array
 products = {};
 users : any=[];
-username :string=''
-  // DI 
+searchByName :string=''
+  //2] DI 
   constructor(private myservice : MyserviceService, private demoservice: DemoService){ }
+
+  // 4] write  ngOnInit()
   ngOnInit(): void {
 
     // taking array from service
