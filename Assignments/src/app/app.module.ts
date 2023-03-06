@@ -47,6 +47,9 @@ import { ReactiveForm2Component } from './reactive-form2/reactive-form2.componen
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { FormBuilderComponent } from './form-builder/form-builder.component';
 import { TestServicesComponent } from './test-services/test-services.component';
+import { Component1Component } from './component1/component1.component';
+import { Component2Component } from './component2/component2.component';
+import { Component3Component } from './component3/component3.component';
 
 
 
@@ -69,6 +72,9 @@ import { TestServicesComponent } from './test-services/test-services.component';
     NgSwitchComponent,
     FormBuilderComponent,
     TestServicesComponent,
+    Component1Component,
+    Component2Component,
+    Component3Component,
     // adding from angular material
     
     
