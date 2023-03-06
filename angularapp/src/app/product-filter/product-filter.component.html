@@ -2,26 +2,23 @@
 <br>
 <p>Pipe | Product filter example</p>
 <div class="row justify-content-center">
-    <div class="col-md-">
+    <div class="col-md-8">
         <label for="search">Search By Product</label>
         <input type="text" class="form-control" placeholder="Enter Product Name"
         [(ngModel)]="namesearch">
     </div>
 <div class="col-md-8">
-<table>
+<table class="table">
     <thead>
         <tr>
-
-                <th>Sr No</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Availibility</th>
+                <th scope="col">Sr No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Availibility</th>
             </tr>
-       
     </thead>
-    
     <tbody>
-        <tr *ngFor="let product of ProductArray | search:namesearch"> 
+        <tr *ngFor="let product of ProductArray | search:namesearch "> 
         <th scope="row"> {{product.sno}} </th>
         <td> {{product.name}} </td>
         <td> {{product.price}} </td>
@@ -30,5 +27,4 @@
     </tbody>
 </table>
 </div>
-
 </div>

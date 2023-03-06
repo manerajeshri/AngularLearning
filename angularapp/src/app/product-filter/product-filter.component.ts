@@ -25,7 +25,7 @@ export class ProductFilterComponent implements OnInit {
       sno:3,
       name: 'Watch',
       price:47000,
-      availibility: 'Available'
+      availibility: ' not Available'
     },
     {
       sno:4,
