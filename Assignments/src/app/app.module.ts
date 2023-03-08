@@ -50,6 +50,7 @@ import { TestServicesComponent } from './test-services/test-services.component';
 import { Component1Component } from './component1/component1.component';
 import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
+import { Component4Component } from './component4/component4.component';
 
 
 
@@ -75,6 +76,7 @@ import { Component3Component } from './component3/component3.component';
     Component1Component,
     Component2Component,
     Component3Component,
+    Component4Component,
     // adding from angular material
     
     
