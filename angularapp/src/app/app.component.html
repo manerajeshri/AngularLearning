@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+
 <!--  Session :  creating component and applying css-->
 <!-- <app-demo></app-demo> -->
 
@@ -100,14 +100,23 @@ let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="od
   
 
   <!-- communication between component -->
-<div class="row">
-  <div class="">
-    <div>
+<!-- <div class="row">
       <app-comp1></app-comp1>
-    </div>
-  </div>
-</div>
-  
-  <app-comp2></app-comp2>
+      <app-comp2></app-comp2>
   <app-comp3></app-comp3>
   <app-comp4></app-comp4>
+</div> -->
+  
+
+<header>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"> <a routerLink="/home" routerLinkActive="active" class="nav-link">Home</a> </li>
+      <li class="nav-item"> <a routerLink="/aboutus" routerLinkActive="active" class="nav-link">AboutUs</a> </li>
+      <li class="nav-item"> <a routerLink="/contactus" routerLinkActive="active" class="nav-link">ContactUs</a> </li>
+      <li class="nav-item"> <a routerLink="/product" routerLinkActive="active" class="nav-link">Product</a> </li>
+    </ul>
+  </nav>
+</header>
+
+<router-outlet></router-outlet>

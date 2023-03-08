@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module'; // used for routing
 import { AppComponent } from './app.component';
 import { DemoComponent } from './demo/demo.component';
 import { NgForComponent } from './ng-for/ng-for.component';
@@ -58,6 +58,15 @@ import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
 import { Comp3Component } from './comp3/comp3.component';
 import { Comp4Component } from './comp4/comp4.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProductComponent } from './product/product.component';
+import { LaptopComponent } from './product/laptop/laptop.component';
+import { MobileComponent } from './product/mobile/mobile.component';
+import { CameraComponent } from './product/camera/camera.component';
+import { WatchComponent } from './product/watch/watch.component';
 
 
 @NgModule({
@@ -83,6 +92,15 @@ import { Comp4Component } from './comp4/comp4.component';
     Comp2Component,
     Comp3Component,
     Comp4Component,
+    AboutusComponent,
+    HomeComponent,
+    ContactusComponent,
+    PagenotfoundComponent,
+    ProductComponent,
+    LaptopComponent,
+    MobileComponent,
+    CameraComponent,
+    WatchComponent,
     
     
   ],
