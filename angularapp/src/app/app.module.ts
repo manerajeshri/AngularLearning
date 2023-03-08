@@ -69,6 +69,7 @@ import { CameraComponent } from './product/camera/camera.component';
 import { WatchComponent } from './product/watch/watch.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -101,6 +102,7 @@ import { WatchComponent } from './product/watch/watch.component';
     MobileComponent,
     CameraComponent,
     WatchComponent,
+    
     
     
   ],

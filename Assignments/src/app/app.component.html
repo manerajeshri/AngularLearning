@@ -1,5 +1,3 @@
-<!-- <router-outlet></router-outlet>   -->
-
 <!-- Practice data Binding -->
 <!-- <app-data-binding></app-data-binding> -->
 <!-- <app-child-to-parent  (sendData)="sendToParent($event)"></app-child-to-parent> -->
@@ -52,22 +50,29 @@
 <!-- <app-test-services></app-test-services> -->
 
 <!-- Communication between component using subcsribe -->
-<!-- <div>
-  <div>
-<app-component1></app-component1> 
-<app-component2></app-component2>
-  </div>
-  <div>
-    <app-component3></app-component3>
-    <app-component4></app-component4>
-  </div>
-</div> -->
-<table>
+<!-- <table>
   <tr>
     <td><app-component1></app-component1></td>&nbsp; &nbsp;
     <td><app-component2></app-component2></td>&nbsp; &nbsp;
     <td><app-component3></app-component3></td>&nbsp; &nbsp;
     <td><app-component4></app-component4></td>&nbsp; &nbsp;
   </tr>
-</table>
+</table> -->
 
+<!-- <hr> -->
+<!-- =========================================================================================================================== -->
+<!-- we must enable router-outlet -->
+
+<br>
+<header>
+  <nav>
+    <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/grocery" routerLinkActive="active">Grocery</a></li>
+      <!-- <li class="nav-item"></li>
+      <li class="nav-item"></li>
+      <li class="nav-item"></li> -->
+    </ul>
+  </nav>
+</header>
+<router-outlet></router-outlet>  

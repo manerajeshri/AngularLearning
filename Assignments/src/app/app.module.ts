@@ -51,6 +51,15 @@ import { Component1Component } from './component1/component1.component';
 import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
 import { Component4Component } from './component4/component4.component';
+import { GroceryComponent } from './grocery/grocery.component';
+import { PackedFoodComponent } from './grocery/packed-food/packed-food.component';
+import { DairyComponent } from './grocery/dairy/dairy.component';
+import { HouseholdComponent } from './grocery/household/household.component';
+import { PersonalCareComponent } from './grocery/personal-care/personal-care.component';
+import { SnacksBeveragesComponent } from './grocery/snacks-beverages/snacks-beverages.component';
+import { PageNotFoundComponent } from './grocery/page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 
@@ -77,6 +86,17 @@ import { Component4Component } from './component4/component4.component';
     Component2Component,
     Component3Component,
     Component4Component,
+    GroceryComponent,
+    PackedFoodComponent,
+    DairyComponent,
+    HouseholdComponent,
+    PersonalCareComponent,
+    SnacksBeveragesComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    
+    
+    
     // adding from angular material
     
     
