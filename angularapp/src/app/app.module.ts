@@ -67,6 +67,7 @@ import { LaptopComponent } from './product/laptop/laptop.component';
 import { MobileComponent } from './product/mobile/mobile.component';
 import { CameraComponent } from './product/camera/camera.component';
 import { WatchComponent } from './product/watch/watch.component';
+import { DemopostComponent } from './demopost/demopost.component';
 
 
 
@@ -102,6 +103,7 @@ import { WatchComponent } from './product/watch/watch.component';
     MobileComponent,
     CameraComponent,
     WatchComponent,
+    DemopostComponent,
     
     
     

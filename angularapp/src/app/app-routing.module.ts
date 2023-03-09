@@ -19,9 +19,10 @@ const routes: Routes = [
 {path: 'contactus', component : ContactusComponent},
 // {path : 'product', component: ProductComponent},
 //  togive children inside product as parent
-{path : 'product',
+// {path : 'product', // for normal working product load on new tab
+{path : 'product',component : ProductComponent,
 children:[
-  {path:'', component : ProductComponent},
+  // {path:'', component : ProductComponent}, // for normal working product load on new tab
   {path : 'laptop', component:LaptopComponent},
   {path : 'mobile', component:MobileComponent},
   {path : 'watch', component:WatchComponent},

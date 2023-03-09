@@ -1,12 +1,14 @@
 
 
 <div class="row">
-    <div class="col-md-12">
+    <!-- <div class="col-md-12"> for single router outlet -->
+      <!-- <div class="col-md-6"> for Multiple router outlet -->
+      <div class="col-md-6">
         <div class="card" >
             <img class="card-img-top" src="../../assets/Images/laptop.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Laptop</h5>
-              <p class="card-text">Are you considering bringing a new laptop to your home but unsure which model to choose? Buy laptops online from brands like Acer, Asus, Avita, Infinix, Nokia, and others that suit your preference.  Choose among: Entertainment Laptops | Gaming Laptops | Everyday use laptops | Premium Laptops</p>
+              <p class="card-text">Choose among: Entertainment Laptops | Gaming Laptops | Everyday use laptops | Premium Laptops</p>
               <a routerLink="laptop" class="btn btn-primary">Laptop</a>
             </div>
         </div>
@@ -35,4 +37,11 @@
             </div>
         </div>
     </div>
+
+
+<div class="col-md-6">
+  <router-outlet></router-outlet>
 </div>
+
+</div>
+
