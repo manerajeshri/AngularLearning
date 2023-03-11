@@ -2,13 +2,20 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { Demopost1Component } from './demopost1/demopost1.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { Demopostdetails1Component } from './demopostdetails1/demopostdetails1.component';
 import { HomeComponent } from './home/home.component';
+import { OrderModule } from './order/order.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CameraComponent } from './product/camera/camera.component';
 import { LaptopComponent } from './product/laptop/laptop.component';
 import { MobileComponent } from './product/mobile/mobile.component';
 import { ProductComponent } from './product/product.component';
 import { WatchComponent } from './product/watch/watch.component';
+import { TemplateformComponent } from './templateform/templateform.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 
 const routes: Routes = [
@@ -23,12 +30,19 @@ const routes: Routes = [
 {path : 'product',component : ProductComponent,
 children:[
   // {path:'', component : ProductComponent}, // for normal working product load on new tab
-  {path : 'laptop', component:LaptopComponent},
+  {path : 'laptop', component:LaptopComponent}, // also we can have multiple routing like this {path : 'laptop', component:LaptopComponent,outlet:'products'},
   {path : 'mobile', component:MobileComponent},
   {path : 'watch', component:WatchComponent},
   {path : 'camera', component:CameraComponent}
 ]
 },
+{path: 'post',component:DemopostComponent},
+{path:'postdetails/:id',component:DemopostdetailsComponent}, // adding new object to display
+{path: 'post1',component:Demopost1Component},
+{path:'postdetails1/:id1',component:Demopostdetails1Component},
+{path:'userdetails', component:UserdetailsComponent},
+{path:'login', component:TemplateformComponent},
+{path:'order', component:OrderModule},
 {path : '**', component:PagenotfoundComponent} // Wild card rought ==> Always right at Last
 ];
 

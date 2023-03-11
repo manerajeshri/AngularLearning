@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { NgStyleComponent } from './ng-style/ng-style.component';
 import { NgClassComponent } from './ng-class/ng-class.component';
-import { CustomDirective } from './custom.directive';
+// import { CustomDirective } from './custom.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // getting from angular material toggle button 
@@ -62,12 +62,13 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { ProductComponent } from './product/product.component';
-import { LaptopComponent } from './product/laptop/laptop.component';
-import { MobileComponent } from './product/mobile/mobile.component';
-import { CameraComponent } from './product/camera/camera.component';
-import { WatchComponent } from './product/watch/watch.component';
 import { DemopostComponent } from './demopost/demopost.component';
+import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
+import { Demopost1Component } from './demopost1/demopost1.component';
+import { Demopostdetails1Component } from './demopostdetails1/demopostdetails1.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { ProductModule } from './product/product.module';
+import { OrderlistComponent } from './orderlist/orderlist.component';
 
 
 
@@ -80,7 +81,7 @@ import { DemopostComponent } from './demopost/demopost.component';
     NgSwitchComponent,
     NgStyleComponent,
     NgClassComponent,
-    CustomDirective,
+    // CustomDirective,
     TemplateformComponent,
     ReactiveformComponent,
     DatabindingComponent,
@@ -98,12 +99,12 @@ import { DemopostComponent } from './demopost/demopost.component';
     HomeComponent,
     ContactusComponent,
     PagenotfoundComponent,
-    ProductComponent,
-    LaptopComponent,
-    MobileComponent,
-    CameraComponent,
-    WatchComponent,
     DemopostComponent,
+    DemopostdetailsComponent,
+    Demopost1Component,
+    Demopostdetails1Component,
+    UserdetailsComponent,
+    OrderlistComponent,
     
     
     
@@ -140,7 +141,8 @@ import { DemopostComponent } from './demopost/demopost.component';
     MatStepperModule,
     MatProgressBarModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ProductModule
     
   ],
   providers: [],

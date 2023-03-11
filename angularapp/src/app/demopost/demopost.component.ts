@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../models/post';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-demopost',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemopostComponent implements OnInit {
 
-  constructor() { }
+arrPost: Post[]=[];
+
+  // DI
+  constructor(private postService : PostService) { }
 
   ngOnInit() {
+this.postService.getPost().subscribe(res=>  {
+  this.arrPost = res;
+   console.log(`received data`, res);
+   
+})
+
   }
 
 }
