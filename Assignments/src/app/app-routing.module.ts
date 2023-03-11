@@ -8,6 +8,9 @@ import { PageNotFoundComponent } from './grocery/page-not-found/page-not-found.c
 import { PersonalCareComponent } from './grocery/personal-care/personal-care.component';
 import { SnacksBeveragesComponent } from './grocery/snacks-beverages/snacks-beverages.component';
 import { HomeComponent } from './home/home.component';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { UsersComponent } from './users/users.component';
+
 
 
 const routes: Routes = [
@@ -23,6 +26,8 @@ children: [
   {path :'household', component:HouseholdComponent},
 ]
 },
+{path : 'users', component: UsersComponent},
+{path: 'userdetails/:id', component:UserdetailsComponent},
  {path: '**', component:PageNotFoundComponent} 
 ];
 

@@ -59,12 +59,17 @@ import { PersonalCareComponent } from './grocery/personal-care/personal-care.com
 import { SnacksBeveragesComponent } from './grocery/snacks-beverages/snacks-beverages.component';
 import { PageNotFoundComponent } from './grocery/page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserdetailsComponent } from './userdetails/userdetails.component';
+
+
 
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [  // we must add component pipe directive here
     AppComponent,
     ChildToParentComponent,
     CountryStateComponent,
@@ -94,6 +99,10 @@ import { HomeComponent } from './home/home.component';
     SnacksBeveragesComponent,
     PageNotFoundComponent,
     HomeComponent,
+    UsersComponent,
+    UserdetailsComponent,
+    
+    
     
     
     
@@ -102,7 +111,7 @@ import { HomeComponent } from './home/home.component';
     
    
   ],
-  imports: [
+  imports: [ // we must import module
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -133,6 +142,7 @@ import { HomeComponent } from './home/home.component';
     MatProgressBarModule,
     MatChipsModule,
     ReactiveFormsModule,
+    HttpClientModule
 
 
     
