@@ -69,6 +69,8 @@ import { Demopostdetails1Component } from './demopostdetails1/demopostdetails1.c
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { ProductModule } from './product/product.module';
 import { OrderlistComponent } from './orderlist/orderlist.component';
+import { AdminModule } from './admin/admin.module';
+import { CustomerModule } from './customer/customer.module';
 
 
 
@@ -142,10 +144,13 @@ import { OrderlistComponent } from './orderlist/orderlist.component';
     MatProgressBarModule, 
     ReactiveFormsModule,
     HttpClientModule,
-    ProductModule
+    ProductModule,
+    
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  log
+ }

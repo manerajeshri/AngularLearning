@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AdminlistComponent } from './admin/adminlist/adminlist.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { CustomerlistComponent } from './customer/customerlist/customerlist.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { Demopost1Component } from './demopost1/demopost1.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
@@ -43,11 +45,20 @@ children:[
 {path:'userdetails', component:UserdetailsComponent},
 {path:'login', component:TemplateformComponent},
 {path:'order', component:OrderModule},
+// {path:'customer', component:CustomerlistComponent},
+// {path:'admin', component:AdminlistComponent},
+
+// lazy loading
+{path: 'customer', loadChildren:'./customer/customer.module#CustomerModule' },
+{path:'admin', loadChildren:'./admin/admin.module#AdminModule'},
+
+
 {path : '**', component:PagenotfoundComponent} // Wild card rought ==> Always right at Last
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes,{preloadingStrategy : PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
