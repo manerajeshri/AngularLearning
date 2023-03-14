@@ -1,0 +1,49 @@
+<h4 style="background-color: aquamarine;">News</h4>
+
+<div>
+    <table class="table table-bordered">
+<thead>
+    <tr> 
+    <th>Title</th>    
+    <th>Publisher </th>    
+    <th>Link</th>    
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of receivedObj.news">
+        <td> {{data.title}} </td>
+        <td> {{data.publisher}} </td>
+        <td> {{data.link}} </td>
+    </tr>
+</tbody>
+    </table>
+</div>
+
+<h4 style="background-color: aquamarine;">Quotes</h4>
+
+<div>
+    <table class="table table-bordered">
+<thead>
+    <tr> 
+    <th>Exchange</th>    
+    <th>Shortname </th>    
+    <th>QuoteType</th> 
+    <th>Symbol</th>   
+    <th>Index</th>
+    <th>Sector  </th>
+    <th> </th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of receivedObj.quotes">
+        <td> {{data.exchange}} </td>
+        <td> {{data.shortname}} </td>
+        <td> {{data.quoteType}} </td>
+        <td> {{data.symbol}} </td>
+        <td> {{data.index}}</td>
+        <td> {{data.sector}} </td>
+    </tr>
+</tbody>
+    </table>
+</div>
+

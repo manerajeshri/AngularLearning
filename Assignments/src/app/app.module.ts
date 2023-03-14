@@ -62,6 +62,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
+import { FinancerapidComponent } from './financerapid/financerapid.component';
 
 
 
@@ -101,6 +102,7 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
     HomeComponent,
     UsersComponent,
     UserdetailsComponent,
+    FinancerapidComponent,
     
     
     
