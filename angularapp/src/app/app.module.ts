@@ -71,6 +71,7 @@ import { ProductModule } from './product/product.module';
 import { OrderlistComponent } from './orderlist/orderlist.component';
 import { AdminModule } from './admin/admin.module';
 import { CustomerModule } from './customer/customer.module';
+import { TodoComponent } from './todo/todo.component';
 
 
 
@@ -107,6 +108,7 @@ import { CustomerModule } from './customer/customer.module';
     Demopostdetails1Component,
     UserdetailsComponent,
     OrderlistComponent,
+    TodoComponent,
     
     
     

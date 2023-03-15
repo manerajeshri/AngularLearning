@@ -17,6 +17,7 @@ import { MobileComponent } from './product/mobile/mobile.component';
 import { ProductComponent } from './product/product.component';
 import { WatchComponent } from './product/watch/watch.component';
 import { TemplateformComponent } from './templateform/templateform.component';
+import { TodoComponent } from './todo/todo.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 
@@ -52,7 +53,7 @@ children:[
 {path: 'customer', loadChildren:'./customer/customer.module#CustomerModule' },
 {path:'admin', loadChildren:'./admin/admin.module#AdminModule'},
 
-
+{path : 'todo', component : TodoComponent},
 {path : '**', component:PagenotfoundComponent} // Wild card rought ==> Always right at Last
 ];
 
