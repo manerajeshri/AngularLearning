@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-templateform',
@@ -37,14 +38,17 @@ genders = [
 
 emails='';
 // isdisabled :boolean= false; not required
-
-constructor() { }
+// DI
+constructor(private route : Router) { }
   ngOnInit() {
   }
 
   
   login(form : NgForm){
     this.isSubmitted= true;
+
+    // for naviagation in routing
+this.route.navigate(['/userdetails']);
 
     // console.log(form);
     // console.log(`form contents : form.values : `,form.value);

@@ -1,3 +1,20 @@
 {
-    "todos":[]
+  "todos": [
+    {
+      "id": 1678983838163,
+      "title": "Edited title"
+    },
+    {
+      "id": 1678983848404,
+      "title": "Format the data of firebase"
+    },
+    {
+      "id": 1678983959909,
+      "title": "Format the data of firebase"
+    },
+    {
+      "id": 1678983967087,
+      "title": "Format the data of firebase"
+    }
+  ]
 }

@@ -42,50 +42,49 @@ export class HomeComponent implements OnInit {
   }
 
 receiveddata;
-// getData(){
-//     this.firebaseService.getPostDataFirebase()
-//     .pipe(map(resData =>{
-//       console.log(resData);
-//       const dataArray=[];
-//       for(const key in resData){
-//       // console.log(key);
-//       // console.log(resData[key]);
-//       dataArray.push({id:key,...resData[key]})
-//       }
-// return dataArray
+getData(){
+    this.firebaseService.getPostDataFirebase()
+    .pipe(map(resData =>{
+      console.log(resData);
+      const dataArray=[];
+      for(const key in resData){
+      // console.log(key);
+      // console.log(resData[key]);
+      dataArray.push({id:key,...resData[key]})
+      }
+return dataArray
 
-//     }))
-//     .subscribe(res=>{
-//       console.log(`Firebase Get Data`, res);
-//       this.receiveddata = res;
-//     })
-  // }
-
-
-  getData(){
-    this.firebaseService.getPostDataFirebase().pipe(
-      map(responseData => {
-        console.log(`before manipulate data`, responseData);
-        
-        // empty array
-        const postArray = [];
-        // for in loop
-        for (const key in responseData) {
-          // check the keys
-          if (Object.prototype.hasOwnProperty.call(responseData, key)) {
-            const element = responseData[key];
-            // push new value into array
-            postArray.push({...responseData[key],id:key})
-            
-          }
-        }
-        return postArray
-      })
-    ).subscribe(res=>{
-      console.log(`aftermanipulate data`, res);
-      
+    }))
+    .subscribe(res=>{
+      console.log(`Firebase Get Data`, res);
+      this.receiveddata = res;
     })
   }
+
+
+  // getData(){
+  //   this.firebaseService.getPostDataFirebase().pipe(
+  //     map(responseData => {
+  //       console.log(`before manipulate data`, responseData);
+        
+  //       // empty array
+  //       const postArray = [];
+  //       // for in loop
+  //       for (const key in responseData) {
+  //         // check the keys
+  //         if (Object.prototype.hasOwnProperty.call(responseData, key)) {
+  //           const element = responseData[key];
+  //           // push new value into array
+  //           postArray.push({...responseData[key],id:key})
+            
+  //         }
+  //       }
+  //       return postArray
+  //     })
+  //   ).subscribe(res=>{
+  //     console.log(`aftermanipulate data`, res);
+  //   })
+  // }
 
 
 
