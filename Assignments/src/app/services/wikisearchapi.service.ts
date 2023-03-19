@@ -8,7 +8,7 @@ export class WikisearchapiService {
 
   // 1] give url
   url='https://en.wikipedia.org/w/api.php';
-
+  search_Value;
   // 2] DI
   constructor(private httpclient : HttpClient) { }
 
@@ -23,7 +23,7 @@ export class WikisearchapiService {
       list: 'search',
       utf8: '1',
       // Note : srsearch parameter is taking search value from search text box for example space.
-      srsearch: 'space',
+      srsearch: this.search_Value,
       origin: '*'
       }})
   }

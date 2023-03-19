@@ -16,14 +16,27 @@ receivedData;
 
   ngOnInit() {
 
-    this.wikisearchapiService.getData1().subscribe(res=>{
-      console.log(`res`,res);
-this.receivedData=res;
-      
-    })
-
-
+    // this.wikisearchapiService.getData1().subscribe(res=>{
+    //   console.log(`res`,res);
+    //   this.receivedData=res;
+    //       })
     }
+
+// on search value
+onSearch(searchValue){
+  
+  // 
+    this.wikisearchapiService.search_Value=searchValue;
+  // fetch data from server
+    this.wikisearchapiService.getData1().subscribe(res=>{
+    console.log(`res`,res);
+    this.receivedData=res;
+      })
+
+
+}
+
+
   }
 
 
