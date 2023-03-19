@@ -63,6 +63,7 @@ import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { FinancerapidComponent } from './financerapid/financerapid.component';
+import { WikisearchapiComponent } from './wikisearchapi/wikisearchapi.component';
 
 
 
@@ -103,6 +104,7 @@ import { FinancerapidComponent } from './financerapid/financerapid.component';
     UsersComponent,
     UserdetailsComponent,
     FinancerapidComponent,
+    WikisearchapiComponent,
     
     
     
