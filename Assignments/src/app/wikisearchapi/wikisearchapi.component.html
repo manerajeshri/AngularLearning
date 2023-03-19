@@ -1,0 +1,20 @@
+<p>wikisearchapi works!</p>
+
+<input type="text" placeholder="Search here" > <br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Wordcount</th>
+            <th>Snippet</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of receivedData.query.search">
+            <td> {{data.title}} </td>
+            <td>{{data.wordcount}}  </td>
+            <td> {{data.snippet}} </td>
+        </tr>
+    </tbody>
+</table>
