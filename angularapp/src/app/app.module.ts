@@ -72,11 +72,12 @@ import { OrderlistComponent } from './orderlist/orderlist.component';
 import { AdminModule } from './admin/admin.module';
 import { CustomerModule } from './customer/customer.module';
 import { TodoComponent } from './todo/todo.component';
+import { HooksComponent } from './hooks/hooks.component';
 
 
 
 @NgModule({
-  declarations: [
+  declarations: [ // component, directive , pipe
     AppComponent,
     DemoComponent,
     NgForComponent,
@@ -109,11 +110,12 @@ import { TodoComponent } from './todo/todo.component';
     UserdetailsComponent,
     OrderlistComponent,
     TodoComponent,
+    HooksComponent,
     
     
     
   ],
-  imports: [
+  imports: [ // any third party module
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -150,8 +152,8 @@ import { TodoComponent } from './todo/todo.component';
     
     
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], // register service in provider 
+  bootstrap: [AppComponent] // define root component
 })
 export class AppModule {
   log

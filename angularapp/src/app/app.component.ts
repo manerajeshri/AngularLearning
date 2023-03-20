@@ -11,9 +11,16 @@ import { RapidService } from './services/rapid.service';
 
 // 3] add implements OnInit
 export class AppComponent implements OnInit {
+
+  // Angular life cycle hooks
+  data = 0 ;
+  changeFromParent(){
+    this.data +=1;
+  }
+
+
   title = 'angularapp';
 
- 
   // creating empty array
 products = {};
 users : any=[];
