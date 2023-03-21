@@ -73,6 +73,7 @@ import { AdminModule } from './admin/admin.module';
 import { CustomerModule } from './customer/customer.module';
 import { TodoComponent } from './todo/todo.component';
 import { HooksComponent } from './hooks/hooks.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -111,6 +112,7 @@ import { HooksComponent } from './hooks/hooks.component';
     OrderlistComponent,
     TodoComponent,
     HooksComponent,
+    LoginComponent,
     
     
     

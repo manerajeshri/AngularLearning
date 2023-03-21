@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { AdminlistComponent } from './admin/adminlist/adminlist.component';
+import { AuthGuard } from './auth.guard';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CustomerlistComponent } from './customer/customerlist/customerlist.component';
 import { DemopostComponent } from './demopost/demopost.component';
@@ -9,6 +10,7 @@ import { Demopost1Component } from './demopost1/demopost1.component';
 import { DemopostdetailsComponent } from './demopostdetails/demopostdetails.component';
 import { Demopostdetails1Component } from './demopostdetails1/demopostdetails1.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { OrderModule } from './order/order.module';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CameraComponent } from './product/camera/camera.component';
@@ -30,7 +32,7 @@ const routes: Routes = [
 // {path : 'product', component: ProductComponent},
 //  togive children inside product as parent
 // {path : 'product', // for normal working product load on new tab
-{path : 'product',component : ProductComponent,
+{path : 'product', canActivate :[AuthGuard] , component : ProductComponent,
 children:[
   // {path:'', component : ProductComponent}, // for normal working product load on new tab
   {path : 'laptop', component:LaptopComponent}, // also we can have multiple routing like this {path : 'laptop', component:LaptopComponent,outlet:'products'},
@@ -44,7 +46,8 @@ children:[
 {path: 'post1',component:Demopost1Component},
 {path:'postdetails1/:id1',component:Demopostdetails1Component},
 {path:'userdetails', component:UserdetailsComponent},
-{path:'login', component:TemplateformComponent},
+// {path:'login', component:TemplateformComponent},
+{path:'login', component: LoginComponent}, // for auth login form
 {path:'order', component:OrderModule},
 // {path:'customer', component:CustomerlistComponent},
 // {path:'admin', component:AdminlistComponent},
