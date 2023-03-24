@@ -14,7 +14,7 @@ export class WikisearchapiService {
 
   // 3] write method to get data from server
 
-  // Below are ate query parameters for the above api end point
+  // Below are the query parameters for the above api end point
   // 
   getData1(){
     return this.httpclient.get(this.url, {params: {
