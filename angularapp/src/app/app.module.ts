@@ -74,6 +74,8 @@ import { CustomerModule } from './customer/customer.module';
 import { TodoComponent } from './todo/todo.component';
 import { HooksComponent } from './hooks/hooks.component';
 import { LoginComponent } from './login/login.component';
+import { AdduserComponent } from './adduser/adduser.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -113,6 +115,8 @@ import { LoginComponent } from './login/login.component';
     TodoComponent,
     HooksComponent,
     LoginComponent,
+    AdduserComponent,
+    RxjsComponent,
     
     
     

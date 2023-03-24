@@ -127,13 +127,19 @@ let evenItem = even; let oddItem = odd;" [class.even]="evenItem" [class.odd]="od
     <li class="nav-item"> <a routerLink="/customer" routerLinkActive="active" class="nav-link">Customer</a> </li>
     <li class="nav-item"> <a routerLink="/admin" routerLinkActive="active" class="nav-link">Admin</a> </li>
     <li class="nav-item"> <a routerLink="/todo" routerLinkActive="active" class="nav-link">ToDo</a> </li>
-    </ul>
+    <li class="nav-item"> <a routerLink="/adduser" routerLinkActive="active" class="nav-link">AddUser</a> </li>
+    <li class="nav-item"> <a routerLink="/userdetails" routerLinkActive="active" class="nav-link">Userdetails</a> </li>
+    <li class="nav-item"> <a routerLink="/rxjs" routerLinkActive="active" class="nav-link">rxjs</a> </li>
+
+    
+    
+  </ul>
   </nav>
 </header>
 
 <!-- Angular Life Cycle hooks -->
 
-<button (click)="changeFromParent()">lifecycle Hook button</button>
+<!-- <button (click)="changeFromParent()">lifecycle Hook button</button> -->
 
-<app-hooks></app-hooks>
+<!-- <app-hooks></app-hooks> -->
 <router-outlet></router-outlet>

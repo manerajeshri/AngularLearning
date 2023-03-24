@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AdduserComponent } from './adduser/adduser.component';
 import { AdminlistComponent } from './admin/adminlist/adminlist.component';
 import { AuthGuard } from './auth.guard';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -18,8 +19,11 @@ import { LaptopComponent } from './product/laptop/laptop.component';
 import { MobileComponent } from './product/mobile/mobile.component';
 import { ProductComponent } from './product/product.component';
 import { WatchComponent } from './product/watch/watch.component';
+import { ResolveGuard } from './resolve.guard';
+import { RxjsComponent } from './rxjs/rxjs.component';
 import { TemplateformComponent } from './templateform/templateform.component';
 import { TodoComponent } from './todo/todo.component';
+import { UnsavedchangesGuard } from './unsavedchanges.guard';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 
 
@@ -45,7 +49,9 @@ children:[
 {path:'postdetails/:id',component:DemopostdetailsComponent}, // adding new object to display
 {path: 'post1',component:Demopost1Component},
 {path:'postdetails1/:id1',component:Demopostdetails1Component},
-{path:'userdetails', component:UserdetailsComponent},
+{path:'userdetails', component:UserdetailsComponent, resolve: {
+  data: ResolveGuard
+}},
 // {path:'login', component:TemplateformComponent},
 {path:'login', component: LoginComponent}, // for auth login form
 {path:'order', component:OrderModule},
@@ -57,6 +63,8 @@ children:[
 {path:'admin', loadChildren:'./admin/admin.module#AdminModule'},
 
 {path : 'todo', component : TodoComponent},
+{path:'adduser', component:AdduserComponent ,canDeactivate:[UnsavedchangesGuard]},
+{path:'rxjs', component:RxjsComponent},
 {path : '**', component:PagenotfoundComponent} // Wild card rought ==> Always right at Last
 ];
 

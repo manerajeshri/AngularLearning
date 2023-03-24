@@ -11,6 +11,13 @@ export class DemoService {
   apiurl='https://jsonplaceholder.typicode.com/users'
   constructor(private httpClient : HttpClient) { }
 
+// for resolve
+products =[
+  {id:1},
+  {id:2}
+]
+
+
 getUsers () {
  return this.httpClient.get(this.apiurl)
 }
