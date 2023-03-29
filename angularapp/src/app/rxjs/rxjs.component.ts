@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { forkJoin, from, interval, of, timer } from 'rxjs';
 import { map, mergeMap, take, takeLast, takeUntil } from 'rxjs/operators';
 
-// for forkjoin using two interfaces
+// 1] for forkjoin using two interfaces 
+// used in line no 29 37 38
 interface User {
   id: number;
 }
@@ -21,11 +22,11 @@ interface Post {
 export class RxjsComponent implements OnInit {
 
   // for forkjoin using two url
-  USERS = 'https://jsonplaceholder.typicode.com/users';
-  POSTS = 'https://jsonplaceholder.typicode.com/posts';
+  userUrl = 'https://jsonplaceholder.typicode.com/users';
+  postUrl = 'https://jsonplaceholder.typicode.com/posts';
 
 // creating array to store data for forkjoin
-data: [User[],Post[]];
+data: [User[],Post[]]; // no need if we dont take it still getting data on console
 
 // DI
   constructor(http : HttpClient) { 
@@ -33,24 +34,19 @@ data: [User[],Post[]];
 // forkjoin : IMP interview 
     // performing multiple HTTP request in angular then we can use forkjoin
     // if we are calling 2-3 API 
-    const users =http.get<User[]>(this.USERS);
-    const posts = http.get<Post[]>(this.POSTS);
+    const users =http.get<User[]>(this.userUrl);
+    const posts = http.get<Post[]>(this.postUrl);
 
     // forkJoin to combine data coming from diffrent servers
     // no multiple subscribe, avoid nested subscription
     
     forkJoin([users,posts]).subscribe(res=>{
-        this.data =res;
-        console.log(`User and Post data`,res);
+        this.data =res; // no need if we dont take it still getting data on console
+        console.log(` forkJoin to combine data coming from diffrent servers : User and Post data`,res);
+        // console.log(` forkJoin to combine data coming from diffrent servers : User and Post data`,this.data);
         
     })
 
-  }
-
-
-// meargemap
-  getData(data) {
-    return of(data + ' Video uploaded');
   }
 
 
@@ -102,7 +98,7 @@ data: [User[],Post[]];
 // i.e. output of first will be send as request to 2nd.  2nd API is depend on 1st API
     const obs1 = from(["Tech", "Comedy", "News"]);
 
-    // nested Subscription without 
+    // with nested Subscription 
 
     // obs1.pipe(
     //   map(res => this.getData(res))
@@ -113,10 +109,14 @@ data: [User[],Post[]];
 // using mergeMap
 
     obs1.pipe(mergeMap((res) => this.getData(res))).subscribe((res) => {
-      console.log(res);
+      console.log(`output of mergeMap`,res);
     });
 
     
   }
+// meargemap
+getData(data) {
+  return of(data + ' Video uploaded');
+}
 
 }
