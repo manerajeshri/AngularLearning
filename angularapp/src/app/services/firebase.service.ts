@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,6 +8,8 @@ export class FirebaseService {
 
 
   url= 'https://angular-fd534-default-rtdb.firebaseio.com/'
+
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
   //DI
   constructor(private httpClient :HttpClient) { }
 

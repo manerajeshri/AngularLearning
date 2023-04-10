@@ -50,4 +50,11 @@ this.rapidservice.getFinance().subscribe(res=>{
     
     
   }
+  // OnDestroy
+  appchildExist=true;
+  OnDestroy(){
+    this.appchildExist = false;
+  }
+
+
 }

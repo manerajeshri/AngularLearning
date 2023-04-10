@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,6 +9,7 @@ export class DemoService {
 
   // declare variable having link as string
   apiurl='https://jsonplaceholder.typicode.com/users'
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private httpClient : HttpClient) { }
 
 // for resolve
