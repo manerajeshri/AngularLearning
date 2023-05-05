@@ -1,0 +1,24 @@
+<h3>String Interpolation one way Data Binding :  variable : {{myname}}  </h3>
+<p>string interpolation variable from method {{myMethodVariable}}  </p>
+<h4>string interpolation variable from object : ID == {{obj.id}} Name == {{obj.name}} </h4>
+<h4>string interpolation variable from array : Complete array is = {{array}} and  Element at index 3 = "{{array[3]}}" </h4>
+<h3>string interpolation variable from array of objects :  </h3>
+<p>ID = {{arrayOfObject[0].id}} Name = {{arrayOfObject[0].name}} <br>
+    ID = {{arrayOfObject[1].id}} Name = {{arrayOfObject[1].name}} <br>
+    ID = {{arrayOfObject[2].id}} Name = {{arrayOfObject[2].name}}
+</p>
+
+<h3> Property Binding ==>  one way Data Binding : we use this when we want to bind or assign values to the attributes of html tags</h3>
+<img [src]="imgUrl" height="150px" width="=150px" alt="No img available">
+
+<h4>Property Binding ==>  one way Data Binding : for div </h4>
+<div [innerHTML]="testDiv"></div>
+
+<h4> Event Binding</h4>
+<button (click)="onButtonClick()"> Button event : Click me</button> 
+<p> Click count = {{count}} </p>
+<input type="text" (keyup)="onKeyUp($event)">
+
+<h3> Two way data binding using [(ngModel)] * import FormsModule in imports of @NgModule</h3>
+<input type="text" [(ngModel)]="twoWayBinding">
+Two way data binding :: {{twoWayBinding}}

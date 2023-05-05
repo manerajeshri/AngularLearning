@@ -27,14 +27,6 @@ onKeyUp(value){
 console.log('$event.target.value', value) // will give total value only as received from html
 }
 
-
-
-
-
-
-
-
-
   constructor() { 
     
   }

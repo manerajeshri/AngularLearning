@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { Democomponent } from './demoCom/demoCom.component';
 import { TestcomponentComponent } from './testcomponent/testcomponent.component';
 import { Testcomponent1Component } from './testcomponent1/testcomponent1.component';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     Democomponent,
     TestcomponentComponent,
-    Testcomponent1Component
+    Testcomponent1Component,
+    DatabindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule, // for two way data binding
   ],
   providers: [],
   bootstrap: [AppComponent]
