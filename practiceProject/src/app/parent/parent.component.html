@@ -4,8 +4,13 @@
 
 
 <!-- child : app-child-card -->
-<app-child-card [title]="dataarray[0].title" [content]="dataarray[0].content"> </app-child-card>
-<app-child-card [title]="dataarray[1].title" [content]="dataarray[1].content"> </app-child-card>
+<!-- <app-child-card [title]="dataarray[0].title" [content]="dataarray[0].content"> </app-child-card> -->
+<!-- <app-child-card [title]="dataarray[1].title" [content]="dataarray[1].content"> </app-child-card> -->
 
 <!-- receivedDataFromChildd -->
 <p>receivedDataFromChildd : {{receivedDataFromChildd}} </p>
+
+<!-- data from child card emp object -->
+<app-child-card (fromCardChild)="rcvfrmCardChild($event)"></app-child-card>
+<h3>received emp data from child card  </h3>
+<p> name : {{receivedEmpObj.name}} city: {{receivedEmpObj.city}} age: {{receivedEmpObj.age}}  </p>

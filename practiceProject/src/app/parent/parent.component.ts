@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 // to receive data from child
 receivedDataFromChildd ;
-
+receivedEmpObj={}
   // set data to be sent to child
 parentToChild : string ='I am from parent';
 
@@ -31,6 +31,13 @@ dataarray =[
   receivedDataFromChild(val){
     this.receivedDataFromChildd= val
 console.log(`receivedDataFromChild`, val);
+
+  }
+
+  rcvfrmCardChild(receivedData){
+this.receivedEmpObj=receivedData;
+console.log(`receivedData from card child emp object`, receivedData);
+console.log(`receivedData from card child emp object`, this.receivedEmpObj);
 
   }
 }

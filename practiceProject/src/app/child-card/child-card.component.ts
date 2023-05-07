@@ -11,13 +11,26 @@ export class ChildCardComponent implements OnInit {
  @Input() title ='';
  @Input() content ='';
 
+// sending data to parent 
+@Output() fromCardChild :EventEmitter<any> = new EventEmitter<any>();
+// data to be sent
+empObj={
+  name: 'Anil',
+  city: 'Pune',
+  age : 37 
+}
+
+
   constructor() { }
 
   ngOnInit() {
     console.log(this.title);
-    console.log(this.content);
-    
-    
+    console.log(this.content);  
+  }
+
+  // sending data to parent
+  Sendempdata(){
+this.fromCardChild.emit(this.empObj)
   }
 
 }
