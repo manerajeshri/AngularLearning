@@ -1,0 +1,11 @@
+<p>parent works! data sent to child is : {{parentToChild}} </p>
+
+<app-child [child]="parentToChild" (fromChild)="receivedDataFromChild($event)" > </app-child>
+
+
+<!-- child : app-child-card -->
+<app-child-card [title]="dataarray[0].title" [content]="dataarray[0].content"> </app-child-card>
+<app-child-card [title]="dataarray[1].title" [content]="dataarray[1].content"> </app-child-card>
+
+<!-- receivedDataFromChildd -->
+<p>receivedDataFromChildd : {{receivedDataFromChildd}} </p>

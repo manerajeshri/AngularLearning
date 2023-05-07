@@ -8,6 +8,9 @@ import { TestcomponentComponent } from './testcomponent/testcomponent.component'
 import { Testcomponent1Component } from './testcomponent1/testcomponent1.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ChildCardComponent } from './child-card/child-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { FormsModule } from '@angular/forms';
     Democomponent,
     TestcomponentComponent,
     Testcomponent1Component,
-    DatabindingComponent
+    DatabindingComponent,
+    ParentComponent,
+    ChildComponent,
+    ChildCardComponent
   ],
   imports: [
     BrowserModule,
