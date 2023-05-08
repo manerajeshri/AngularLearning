@@ -7,3 +7,30 @@
         <li *ngFor="let num of arrayOfNumbers ;let i= index" >  {{num}} index={{i}} </li>
     </ul>
 </div>
+
+<div>
+    <h4 style="text-align: center;"> **** Movies ****</h4>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sr no</th>
+                <th>Title</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies ; let i =index ; let evenIteam = even ; let oddIteam = odd"
+            [class.even]="evenIteam" [class.odd]="oddIteam">
+                <td>  {{i+1}} </td>
+                <td>{{movie.title}} </td>
+                <td>{{movie.year}} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+</div>
