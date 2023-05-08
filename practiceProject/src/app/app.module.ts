@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ChildCardComponent } from './child-card/child-card.component';
+import { NgforComponent } from './ngfor/ngfor.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChildCardComponent } from './child-card/child-card.component';
     DatabindingComponent,
     ParentComponent,
     ChildComponent,
-    ChildCardComponent
+    ChildCardComponent,
+    NgforComponent
   ],
   imports: [
     BrowserModule,

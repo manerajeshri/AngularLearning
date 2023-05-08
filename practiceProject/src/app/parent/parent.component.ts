@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentComponent implements OnInit {
 // to receive data from child
-receivedDataFromChildd ;
+receivedDataFromChildd = {} ;
 receivedEmpObj={}
   // set data to be sent to child
 parentToChild : string ='I am from parent';

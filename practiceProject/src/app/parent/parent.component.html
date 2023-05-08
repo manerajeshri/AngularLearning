@@ -1,14 +1,19 @@
 <p>parent works! data sent to child is : {{parentToChild}} </p>
 
-<app-child [child]="parentToChild" (fromChild)="receivedDataFromChild($event)" > </app-child>
+<!-- <app-child [child]="parentToChild" (fromChild)="receivedDataFromChild($event)" > </app-child> -->
 
+<!-- for using model child to parent -->
+<app-child [child]="parentToChild" (fromchild)="receivedDataFromChild($event)" > </app-child>
+<p> Received emp object 
+    {{receivedDataFromChildd.name}} {{receivedDataFromChildd.id}} 
+    {{receivedDataFromChildd.city}} {{receivedDataFromChildd.salary}}  </p>
 
 <!-- child : app-child-card -->
 <!-- <app-child-card [title]="dataarray[0].title" [content]="dataarray[0].content"> </app-child-card> -->
 <!-- <app-child-card [title]="dataarray[1].title" [content]="dataarray[1].content"> </app-child-card> -->
 
 <!-- receivedDataFromChildd -->
-<p>receivedDataFromChildd : {{receivedDataFromChildd}} </p>
+<!-- <p>receivedDataFromChildd : {{receivedDataFromChildd}} </p> -->
 
 <!-- data from child card emp object -->
 <app-child-card (fromCardChild)="rcvfrmCardChild($event)"></app-child-card>
